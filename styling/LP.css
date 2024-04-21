@@ -1,0 +1,182 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+}
+body{
+    color: black;
+    background-color: rgb(233, 237, 240);
+}
+.imglogo{
+    height: 100px;
+    width: 200px;
+}
+.cmenu{
+    display: flex;
+    gap: 2rem;
+}
+
+#menu{
+    display: none;
+    color: black;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 6%;
+    background-color:rgba(181, 174, 136, 0.7);
+    border-bottom: 1px solid #9e9a9a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5000;
+}
+nav .Navbar li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 1rem;
+}
+
+nav .Navbar  a{   
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: rgb(14, 13, 13);
+}
+
+nav .Navbar a:hover, nav .Navbar a.active{
+    font-weight: bold;
+    color: rgb(228, 223, 223);
+    background-color: rgb(102, 94, 94);
+    border-radius: 10%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+.main{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #E4DAA9;
+}
+.main .content{
+    margin-top: 7rem;
+    padding: 4%;
+    max-width: 700px;
+}
+.main .content h1{
+    font-size: 3.15em;
+    color: rgb(230, 222, 222);
+    line-height: 1.4;
+    mix-blend-mode: difference;
+}
+.main .content span{
+    font-style: italic;
+    font-size: 3.65rem;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #8d8374;
+    color: #fff;
+}
+    
+.main .content p{
+    font-size: 1.3rem;
+    margin-top: 1em;
+    text-align: justify;
+    line-height: 1.3;
+    font-weight: 300;
+    color: rgb(247, 242, 242);
+    max-width: 30rem;
+    mix-blend-mode: difference;
+}
+.main .content .buttonBuy {
+    display: inline-block;
+    margin-top: 2em;
+    padding: 1rem 2em;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: rgba(198, 201, 204, 0.9);
+    border-radius: 2rem;
+    transition: transform 0.3s ease-in-out;
+  }
+  .buttonBuy a{
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .main .content .buttonBuy:hover {
+    background-color: black;
+    cursor: pointer;
+  }
+
+
+@media screen and (max-width: 1366px){
+    html{
+        font-size: 80%;
+    }
+}
+@media screen and (max-width: 768px){
+    html{
+        font-size: 70%;
+    }
+    #menu{
+        display: block;
+    }
+    #menu:hover{
+        transform: scale(1.2);
+    }
+    nav .Navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: rgba(198, 201, 204, 0.9);
+        width: 20rem;
+        height: 100vh;
+        transition: 0.5s;
+    }
+    nav .Navbar.active{
+        right: 0;
+    }
+    nav .Navbar a{
+        color: black;
+        display: block;
+        margin: 1.75rem;
+        padding: 0.5rem;
+    }
+
+}
+@media screen and (max-width: 450px){
+    html{
+        font-size: 50%;
+    }
+    #menu{
+        display: block;
+    }
+    #menu:hover{
+        transform: scale(1.2);
+    }
+    nav .Navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: rgba(198, 201, 204, 0.9);
+        width: 20rem;
+        height: 100vh;
+    }
+    nav .Navbar.active{
+        right: 0;
+    }
+    nav .Navbar a{
+        color: black;
+        display: block;
+        margin: 1.75rem;
+        padding: 0.5rem;
+    }
+}
