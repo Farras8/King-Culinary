@@ -1,0 +1,152 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+}
+
+body {
+    color: black;
+    background-color: #E4DAA9;
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
+.imglogo {
+    height: 100px;
+    width: 200px;
+}
+
+.cmenu {
+    display: flex;
+    gap: 2rem;
+}
+
+#menu {
+    display: none;
+    color: black;
+}
+
+#user{
+    color: #494429;
+}
+
+#user:hover {
+    color: rgb(18, 189, 166);
+    background-color: #E4DAA9;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 6%;
+    background-color: rgba(18, 189, 166, 0.7);
+    border-bottom: 1px solid #9e9a9a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5000;
+    width: 100%;
+}
+
+nav .Navbar li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 1rem;
+}
+
+nav .Navbar a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #494429;
+}
+
+nav .Navbar a:hover,
+nav .Navbar a.active {
+    font-weight: bold;
+    color: rgb(18, 189, 166);
+    background-color: #E4DAA9;
+    border-radius: 10%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+h2 {
+    margin-top: 80px;
+    text-align: center;
+}
+
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto; 
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="file"] {
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+button[type="button"],
+input[type="submit"],
+#save,
+#share {
+    background-color: #12bda6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px; /* Medium space between buttons */
+}
+
+#share {
+    background-color: #ff6600; /* Share button color */
+}
+
+button[type="button"]:hover,
+input[type="submit"]:hover,
+#save:hover,
+#share:hover {
+    background-color: #0d9b84;
+}
+
+button[type="button"]:last-child,
+input[type="submit"]:last-child,
+#save:last-child,
+#share:last-child {
+    margin-right: 0; 
+}
+
+.button-container {
+    text-align: center; 
+}
+
+.button-container button {
+    margin: 0 10px; 
+}
