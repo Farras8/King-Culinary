@@ -1,5 +1,5 @@
-$(document).ready(function() {
-    $('.login-button').click(function(event) {
+$(document).ready(function () {
+    $('.login-button').click(function (event) {
         event.preventDefault(); // Menghentikan tindakan default dari tombol submit
 
         // Mendapatkan nilai email dan password
@@ -17,8 +17,8 @@ $(document).ready(function() {
     });
 });
 
-$(document).ready(function() {
-    $('.register-button').click(function(event) {
+$(document).ready(function () {
+    $('.register-button').click(function (event) {
         event.preventDefault(); // Menghentikan tindakan default dari tombol submit
 
         // Mendapatkan nilai email dan password
@@ -70,7 +70,7 @@ const initSlider = () => {
             const newThumbPosition = thumbPosition + deltaX;
             const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
             const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
-            
+
             scrollbarThumb.style.left = `${boundedPosition}px`;
             imageList.scrollLeft = scrollPosition;
         }
@@ -116,7 +116,7 @@ const initSlider = () => {
             } else {
                 imageList.scrollTo({ left: nextScrollLeft, behavior: "smooth" });
             }
-        }, 10000);
+        }, 5000);
         return interval;
     };
 
@@ -136,4 +136,35 @@ const initSlider = () => {
 window.addEventListener("resize", initSlider);
 window.addEventListener("load", initSlider);
 
+//Dropdown
 
+const dropdowns = document.querySelectorAll('.dropdown');
+
+dropdowns.forEach(dropdown => {
+    const select = dropdown.querySelector('.select');
+    const caret = dropdown.querySelector('.caret');
+    const menu = dropdown.querySelector('.menu');
+    const options = dropdown.querySelector('.menu li');
+    const selected = dropdown.querySelector('.selected');
+
+    select.addEventListener('click', () => {
+        select.classList.toggle('select-clicked');
+        caret.classList.toggle('caret-rotate');
+        menu.classList.toggle('menu-open');
+
+    });
+
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            selected.innerText = option.innerText;
+
+            select.classList.remove('select-clicked');
+            caret.classList.remove('caret-rotate');
+            menu.classList.remove('menu-open');
+            options.forEach(option => {
+                option.classList.remove('active');
+            });
+            option.classList.add('active');
+        });
+    });
+});
