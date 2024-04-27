@@ -1,43 +1,103 @@
 let recipes = {
     data: [
         {
-            recipeName: "Regular White T-Shirt",
+            recipeName: "Recipe 1",
             category: "Breakfast",
             image: "image/dinner title.jpeg",
         },
         {
-            recipeName: "Beige Short Skirt",
+            recipeName: "Recipe 2",
+            category: "Breakfast",
+            image: "image/dinner title.jpeg",
+        },
+        {
+            recipeName: "Recipe 3",
+            category: "Breakfast",
+            image: "image/dinner title.jpeg",
+        },
+        {
+            recipeName: "Recipe 4",
+            category: "Breakfast",
+            image: "image/dinner title.jpeg",
+        },
+        {
+            recipeName: "Recipe 5",
+            category: "Breakfast",
+            image: "image/dinner title.jpeg",
+        },
+        {
+            recipeName: "Recipe 6",
+            category: "Dessert",
+            image: "image/dinner title.jpeg",
+        },
+        {
+            recipeName: "Recipe 7",
+            category: "Dessert",
+            image: "image/dinner title.jpeg",
+        },
+        {
+            recipeName: "Recipe 8",
+            category: "Dessert",
+            image: "image/dinner title.jpeg",
+        },
+        {
+            recipeName: "Recipe 9",
+            category: "Dessert",
+            image: "image/dinner title.jpeg",
+        },
+        {
+            recipeName: "Recipe 10",
+            category: "Dessert",
+            image: "image/dinner title.jpeg",
+        },
+        {
+            recipeName: "Recipe 11",
             category: "Dinner",
             image: "image/dinner title.jpeg",
         },
         {
-            recipeName: "Sporty SmartWatch",
+            recipeName: "Recipe 12",
             category: "Dinner",
             image: "image/dinner title.jpeg",
         },
         {
-            recipeName: "Basic Knitted Top",
+            recipeName: "Recipe 13",
+            category: "Dinner",
+            image: "image/dinner title.jpeg",
+        },
+        {
+            recipeName: "Recipe 14",
+            category: "Dinner",
+            image: "image/dinner title.jpeg",
+        },
+        {
+            recipeName: "Recipe 15",
+            category: "Dinner",
+            image: "image/dinner title.jpeg",
+        },
+        {
+            recipeName: "Recipe 16",
             category: "Lunch",
             price: "29",
             image: "image/dinner title.jpeg",
         },
         {
-            recipeName: "Black Leather Jacket",
-            category: "Dessert",
+            recipeName: "Recipe 17",
+            category: "Lunch",
             image: "image/dinner title.jpeg",
         },
         {
-            recipeName: "Stylish Pink Trousers",
-            category: "Dessert",
+            recipeName: "Recipe 18",
+            category: "Lunch",
             image: "image/dinner title.jpeg",
         },
         {
-            recipeName: "Brown Men's Jacket",
-            category: "Breakfast",
+            recipeName: "Recipe 19",
+            category: "Lunch",
             image: "image/dinner title.jpeg",
         },
         {
-            recipeName: "Comfy Gray Pants",
+            recipeName: "Recipe 20",
             category: "Lunch",
             image: "image/dinner title.jpeg",
         },
