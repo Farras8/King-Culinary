@@ -171,9 +171,17 @@ document.getElementById("search-input").addEventListener("input", () => {
 
 function performSearch() {
     // initializations
-    let searchInput = document.getElementById("search-input").value.toUpperCase();
+    let searchInput = document.getElementById("search-input").value.trim().toUpperCase(); // Trim whitespace and convert to uppercase
     let elements = document.querySelectorAll(".recipe-name");
     let cards = document.querySelectorAll(".card");
+    let dropdown = document.querySelector(".selected");
+
+    // If search input is empty, revert to "Browse By"
+    if (searchInput === "") {
+        dropdown.innerText = "Browse By";
+        cards.forEach(card => card.classList.remove("hide")); // Show all cards
+        return; // Exit the function
+    }
 
     // loop through all elements
     elements.forEach((element, index) => {
@@ -187,6 +195,7 @@ function performSearch() {
         }
     });
 }
+
 
 
 
