@@ -25,7 +25,6 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="addRecipe.html">Upload Recipe</a></li>
-                <li><a href="#">Upload Recipe</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
@@ -36,94 +35,37 @@
         </div>
 
     </nav>
-    <!--Search-->
-    <section class="search">
-        <div class="search-container">
-            <input type="text" class="search-input" placeholder="search">
-            <i data-feather="search" class="search-btn"></i>
-        </div>
-    </section>
-
+ 
     <!-- Image Slide -->
-    <section class="imgslide">
-        <div class="container">
-            <div class="slider-wrapper">
-                <button id="prev-slide" class="slide-button material-symbols-rounded">
-                    < </button>
-                        <ul class="image-list">
-                            <li>
-                                <div class="image-container">
-                                    <img class="image-item" src="image/slow-cooker-roast-lamb-98513-1.jpeg"
-                                        alt="img-1" />
-                                    <div class="image-text">Slow Cooker Roast Lamb</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="image-container">
-                                    <img class="image-item" src="image/chicken-cacciatore-118959-2.jpg" alt="img-2" />
-                                    <div class="image-text">Chicken Cacciatore</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="image-container">
-                                    <img class="image-item" src="image/slow-cooker-beef-stroganoff-106356-1.jpeg"
-                                        alt="img-3" />
-                                    <div class="image-text">Slow Cooker Beef Stroganoff</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="image-container">
-                                    <img class="image-item" src="image/classic-moussaka-79675-1.jpeg" alt="img-4" />
-                                    <div class="image-text">Classic Moussaka</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="image-container">
-                                    <img class="image-item" src="image/chad-montano-lP5MCM6nZ5A-unsplash.jpg"
-                                        alt="img-5" />
-                                    <div class="image-text">Culinary Inspiration</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="image-container">
-                                    <img class="image-item" src="image/classic-moussaka-79675-1.jpeg" alt="img-6" />
-                                    <div class="image-text">Classic Moussaka</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="image-container">
-                                    <img class="image-item" src="image/classic-moussaka-79675-1.jpeg" alt="img-7" />
-                                    <div class="image-text">Classic Moussaka</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="image-container">
-                                    <img class="image-item" src="image/classic-moussaka-79675-1.jpeg" alt="img-8" />
-                                    <div class="image-text">Classic Moussaka</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="image-container">
-                                    <img class="image-item" src="image/classic-moussaka-79675-1.jpeg" alt="img-9" />
-                                    <div class="image-text">Classic Moussaka</div>
-                                </div>
-                            </li>
-                        </ul>
-                        <button id="next-slide" class="slide-button material-symbols-rounded">
-                            >
-                        </button>
+    <div class="slider">
+        <div class="list">
+            <div class="item">
+                <img src="image/image slide 2.avif" alt="">
+                <div class="slide-text">Welcome to King Culinary Website</div>
             </div>
-            <div class="slider-scrollbar">
-                <div class="scrollbar-track">
-                    <div class="scrollbar-thumb"></div>
-                </div>
+            <div class="item">
+                <img src="image/image slide 1.avif" alt="">
+                <div class="slide-text">Easy to Search</div>
+            </div>
+            <div class="item">
+                <img src="image/image-slide 3.jpg" alt="">
+                <div class="slide-text">Sharing Recipe to The World</div>
             </div>
         </div>
-    </section>
+        <div class="buttons">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <ul class="dots">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
 
     <!--Browse-By Section-->
     <section class="Browse-By">
-        <h1 class="br-title">Browse By</h1>
+        <h1 class="br-title">Browse <span class="title-span">By</span></h1>
         <div class="br-img-list">
             <div class="br-img-card">
                 <img class="br-img-item" src="image/breakfast title.jpeg" alt="img-1" />
@@ -145,33 +87,13 @@
                 <img class="br-img-item" src="image/slow-cooker-roast-lamb-98513-1.jpeg" alt="img-1" />
                 <div class="br-img-text">Desserts</div>
             </div>
-            <div class="br-img-card">
-                <img class="br-img-item" src="image/slow-cooker-roast-lamb-98513-1.jpeg" alt="img-1" />
-                <div class="br-img-text">Appetizer</div>
-            </div>
-            <div class="br-img-card">
-                <img class="br-img-item" src="image/slow-cooker-roast-lamb-98513-1.jpeg" alt="img-1" />
-                <div class="br-img-text">Main Course</div>
-            </div>
-            <div class="br-img-card">
-                <img class="br-img-item" src="image/slow-cooker-roast-lamb-98513-1.jpeg" alt="img-1" />
-                <div class="br-img-text">Winter</div>
-            </div>
-            <div class="br-img-card">
-                <img class="br-img-item" src="image/slow-cooker-roast-lamb-98513-1.jpeg" alt="img-1" />
-                <div class="br-img-text">Fall</div>
-            </div>
-            <div class="br-img-card">
-                <img class="br-img-item" src="image/slow-cooker-roast-lamb-98513-1.jpeg" alt="img-1" />
-                <div class="br-img-text">Brunch</div>
-            </div>
         </div>
         <a href="browseBy.html" class="br-btn-more-recipe">More</a>
     </section>
 
     <!--Upload Recipe Section-->
     <section class="up-recipe">
-        <h1 class="up-recipe-title">Upload Recipe</h1>
+        <h1 class="up-recipe-title">Upload <span class="title-span">Recipe</span></h1>
         <div class="up-recipe-card">
             <div class="up-recipe-card-atas">
                 <div class="up-recipe-image">
@@ -189,7 +111,7 @@
 
     <!--Latest Recipe-->
     <section class="latest-recipe">
-        <h1 class="latest-recipe-title">Latest Recipe</h1>
+        <h1 class="latest-recipe-title">Latest <span class="title-span">Recipe</span></h1>
         <div class="latest-recipe-img-list">
             <div class="latest-recipe-img-card">
                 <div class="latest-recipe-image-container">

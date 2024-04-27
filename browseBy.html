@@ -16,124 +16,49 @@
 </head>
 
 <body>
-    <!-- Navbar -->
     <nav>
         <div class="logo">
             <img src="image/King_Culinary_Logo-removebg-preview.png" class="imglogo" alt="logo">
         </div>
-        <div class="Navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Upload Recipe</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-        <div class="cmenu">
-            <a href="" id="user"><i data-feather="user"></i></a>
-            <a href="" id="menu"><i data-feather="menu"></i></a>
-        </div>
-
     </nav>
-
+    <div class="back-to-home">
+        <a href="index.html"><< Back to Home</a>
+    </div>
+    <section class="search">
+        <div class="search-container">
+            <input type="search" id="search-input"  placeholder="search">
+            <i data-feather="search" id="search-btn"></i>
+        </div>
+    </section>
     <!--Main Section-->
     <div class="container-Bb">
-        <div class="Bb-atas">
-            <h2>Food Recipe</h2>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim odio eget lorem vestibulum, eget
-            lacinia ligula eleifend
-        </div>
-        <div class="Bb-main">
-            <div class="dropdown">
-                <div class="select">
-                    <span class="selected">Browse By</span>
-                    <div class="caret"></div>
-                </div>
-                <ul class="menu">
-                    <li><a href="Dinner.html">Dinner</a></li>
-                    <li><a href="Lunch.html">Lunch</a></li>
-                    <li><a href="#">Breakfast</a></li>
-                    <li><a href="#">Brunch</a></li>
-                    <li><a href="#">Desserts</a></li>
-                    <li><a href="#">Winter</a></li>
-                    <li><a href="#">Summer</a></li>
-                </ul>
-            </div>
-            <div class="latest-recipe-img-list">
-                <div class="latest-recipe-img-card">
-                    <div class="latest-recipe-image-container">
-                        <img class="latest-recipe-img-item" src="image/breakfast title.jpeg" alt="img-1" />
-                        <i data-feather="heart" class="love-icon"></i>
-                    </div>
-                    <div class="latest-recipe-img-text">Breakfast</div>
-                </div>
-                <div class="latest-recipe-img-card">
-                    <div class="latest-recipe-image-container">
-                        <img class="latest-recipe-img-item" src="image/breakfast title.jpeg" alt="img-1" />
-                        <i data-feather="heart" class="love-icon"></i>
-                    </div>
-                    <div class="latest-recipe-img-text">Dinner</div>
-                </div>
-                <div class="latest-recipe-img-card">
-                    <div class="latest-recipe-image-container">
-                        <img class="latest-recipe-img-item" src="image/breakfast title.jpeg" alt="img-1" />
-                        <i data-feather="heart" class="love-icon"></i>
-                    </div>
-                    <div class="latest-recipe-img-text">Lunch</div>
-                </div>
-                <div class="latest-recipe-img-card">
-                    <div class="latest-recipe-image-container">
-                        <img class="latest-recipe-img-item" src="image/breakfast title.jpeg" alt="img-1" />
-                        <i data-feather="heart" class="love-icon"></i>
-                    </div>
-                    <div class="latest-recipe-img-text">Brunch</div>
-                </div>
-                <div class="latest-recipe-img-card">
-                    <div class="latest-recipe-image-container">
-                        <img class="latest-recipe-img-item" src="image/breakfast title.jpeg" alt="img-1" />
-                        <i data-feather="heart" class="love-icon"></i>
-                    </div>
-                    <div class="latest-recipe-img-text">Brunch</div>
-                </div>
-                <div class="latest-recipe-img-card">
-                    <div class="latest-recipe-image-container">
-                        <img class="latest-recipe-img-item" src="image/breakfast title.jpeg" alt="img-1" />
-                        <i data-feather="heart" class="love-icon"></i>
-                    </div>
-                    <div class="latest-recipe-img-text">Brunch</div>
-                </div>
-                <div class="latest-recipe-img-card">
-                    <div class="latest-recipe-image-container">
-                        <img class="latest-recipe-img-item" src="image/breakfast title.jpeg" alt="img-1" />
-                        <i data-feather="heart" class="love-icon"></i>
-                    </div>
-                    <div class="latest-recipe-img-text">Brunch</div>
-                </div>
-            </div>
-        </div>
-    </div>
 
+        <div id="dropdown">
+            <div class="select">
+                <span class="selected">Browse By</span>
+                <div class="caret"></div>
+            </div>
+            <ul class="menu">
+                <li onclick="filterProduct('Dinner')">
+                    <div class="menu-text">Dinner</div>
+                </li>
+                <li onclick="filterProduct('Lunch')">
+                    <div class="menu-text">Lunch</div>
+                </li>
+                <li onclick="filterProduct('Breakfast')">
+                    <div class="menu-text">Breakfast</div>
+                </li>
+                <li onclick="filterProduct('Dessert')">
+                    <div class="menu-text">Dessert</div>
+                </li>
+            </ul>
+        </div>
+        <div id="recipes"></div>
+    </div>
     <footer>
         <p>&copy; 2024 King Culinary. All rights reserved.</p>
     </footer>
-    <script>
-        $(document).ready(function () {
-
-            $(".Navbar ul li a").click(function (e) {
-                e.preventDefault();
-                var targetUrl = $(this).attr("href");
-                $("body").animate({ opacity: 0, marginTop: "100px" }, 500, function () {
-                    window.location.href = targetUrl;
-                });
-            });
-            $("body").animate({ opacity: 1, marginTop: "0" }, 500);
-        });
-    </script>
-
-    <script>
-        feather.replace()
-    </script>
-    <script src="js/script.js"></script>
+    <script src="js/filter.js"></script>
 </body>
 
 </html>
