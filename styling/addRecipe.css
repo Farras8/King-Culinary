@@ -7,7 +7,7 @@
     border: none;
   }
   
-  body {
+body {
     color: black;
     background-color: #E4DAA9;
   }
@@ -39,7 +39,7 @@
     cursor: pointer;
   }
   
-  nav {
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,20 +53,20 @@
     z-index: 5000;
   }
   
-  nav .Navbar li {
+nav .Navbar li {
     display: inline-block;
     list-style-type: none;
     margin: 0 1rem;
   }
   
-  nav .Navbar a {
+nav .Navbar a {
     text-decoration: none;
     font-size: 1.2rem;
     color: #494429;
   }
   
-  nav .Navbar a:hover,
-  nav .Navbar a.active {
+nav .Navbar a:hover,
+nav .Navbar a.active {
     font-weight: bold;
     color: rgb(18, 189, 166);
     background-color: #E4DAA9;
@@ -75,7 +75,7 @@
     cursor: pointer;
   }
 
-  h2 {
+h2 {
     margin-top: 130px; /* Adjusted margin to push the h2 below the navbar */
     text-align: center;
 }
@@ -199,11 +199,10 @@ footer {
     h2 {
         margin-top: 130px; /* Adjusted margin to push the h2 below the navbar */
         text-align: center;
-    }
+    }        
 
     form {
-        padding: 20px 10px; /* Adjust padding for smaller screens */
-        max-width: 100%; /* Allow the form to occupy the full width */
+        max-width: 90%; /* Allow the form to occupy the full width */
     }
 
     /* Adjust margin for photo preview to center it and make it responsive */
@@ -232,11 +231,6 @@ footer {
 
     .button-container button {
         margin: 0 10px; /* Add margin to buttons for spacing */
-    }
-
-    /* Adjust margin for h2 to ensure proper spacing */
-    h2 {
-        margin-top: 80px; /* Adjusted margin for smaller screens */
     }
     
     /* Adjust margin for photo preview to center it */
