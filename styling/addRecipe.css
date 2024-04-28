@@ -5,81 +5,78 @@
     padding: 0;
     outline: none;
     border: none;
-}
-
-body {
+  }
+  
+  body {
     color: black;
     background-color: #E4DAA9;
-    padding-top: 60px;
-    padding-bottom: 50px;
-}
-
-.imglogo {
+  }
+  
+  .imglogo {
     height: 100px;
     width: 200px;
-}
-
-.cmenu {
+  }
+  
+  .cmenu {
     display: flex;
     gap: 2rem;
-}
-
-#menu {
+  }
+  
+  #menu {
     display: none;
     color: black;
-}
-
-#user{
+  }
+  
+  #user {
     color: #494429;
-}
-
-#user:hover {
+  }
+  
+  #user:hover {
     color: rgb(18, 189, 166);
     background-color: #E4DAA9;
     border-radius: 50%;
     padding: 10px;
     cursor: pointer;
-}
-
-nav {
+  }
+  
+  nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.25rem 6%;
-    background-color: rgba(18, 189, 166, 0.7);
+    background-color: rgba(177, 169, 128, 0.7);
     border-bottom: 1px solid #9e9a9a;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 5000;
-    width: 100%;
-}
-
-nav .Navbar li {
+  }
+  
+  nav .Navbar li {
     display: inline-block;
     list-style-type: none;
     margin: 0 1rem;
-}
-
-nav .Navbar a {
+  }
+  
+  nav .Navbar a {
     text-decoration: none;
     font-size: 1.2rem;
     color: #494429;
-}
-
-nav .Navbar a:hover,
-nav .Navbar a.active {
+  }
+  
+  nav .Navbar a:hover,
+  nav .Navbar a.active {
     font-weight: bold;
     color: rgb(18, 189, 166);
     background-color: #E4DAA9;
     border-radius: 10%;
     padding: 10px;
     cursor: pointer;
-}
+  }
 
-h2 {
-    margin-top: 80px;
+  h2 {
+    margin-top: 130px; /* Adjusted margin to push the h2 below the navbar */
     text-align: center;
 }
 
@@ -89,6 +86,10 @@ form {
     border-radius: 10px;
     max-width: 600px;
     margin: 0 auto; 
+}
+
+#photo-preview{
+    max-width: 500px;
 }
 
 label {
@@ -149,4 +150,97 @@ input[type="submit"]:last-child,
 
 .button-container button {
     margin: 0 10px; 
+}
+
+footer {
+    padding: 1em;
+    background-color: rgb(177, 169, 128);
+    margin-top: 1em;
+    text-align: center;
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
+@media screen and (max-width: 768px) {
+    html {
+      font-size: 70%;
+    }
+  
+    #menu {
+      display: block;
+    }
+  
+    #menu:hover {
+      transform: scale(1.2);
+    }
+  
+    nav .Navbar {
+      position: absolute;
+      top: 100%;
+      right: -100%;
+      background-color: rgba(177, 169, 128, 0.7);
+      width: 20rem;
+      height: 100vh;
+      transition: 0.5s;
+    }
+  
+    nav .Navbar.active {
+      right: 0;
+    }
+  
+    nav .Navbar a {
+      color: black;
+      display: block;
+      margin: 1.75rem;
+      padding: 0.5rem;
+    }
+
+    h2 {
+        margin-top: 130px; /* Adjusted margin to push the h2 below the navbar */
+        text-align: center;
+    }
+
+    form {
+        padding: 20px 10px; /* Adjust padding for smaller screens */
+        max-width: 100%; /* Allow the form to occupy the full width */
+    }
+
+    /* Adjust margin for photo preview to center it and make it responsive */
+    #photo-preview {
+        max-width: 100%; /* Set the maximum width to 100% */
+        margin: 0 auto; /* Center the photo preview */
+    }
+
+    input[type="text"],
+    select,
+    textarea {
+        width: calc(100% - 16px); /* Adjust width to fit smaller screens with padding */
+    }
+
+    button[type="button"],
+    input[type="submit"],
+    #save,
+    #share {
+        margin-right: 0; /* Remove margin between buttons for smaller screens */
+        margin-bottom: 10px; /* Add space between buttons */
+    }
+
+    .button-container {
+        text-align: center;
+    }
+
+    .button-container button {
+        margin: 0 10px; /* Add margin to buttons for spacing */
+    }
+
+    /* Adjust margin for h2 to ensure proper spacing */
+    h2 {
+        margin-top: 80px; /* Adjusted margin for smaller screens */
+    }
+    
+    /* Adjust margin for photo preview to center it */
+    #photo-preview {
+        margin: 0 auto;
+    }
 }
