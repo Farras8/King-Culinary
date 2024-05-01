@@ -1,0 +1,319 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+}
+
+body {
+    color: black;
+    background-color: #E4DAA9;
+}
+
+.imglogo {
+    height: 100px;
+    width: 200px;
+}
+
+.cmenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+#menu {
+    display: none;
+    color: black;
+}
+
+#search {
+    font-weight: bold;
+    color: #494429;
+}
+
+#search:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.btn-login {
+    font-weight: bold;
+    text-decoration: none;
+    color: #494429;
+}
+
+.btn-login:hover {
+    text-decoration: underline;
+}
+
+#user {
+    font-weight: bold;
+    color: #494429;
+}
+
+#user:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 6%;
+    background-color: rgba(177, 169, 128, 0.7);
+    border-bottom: 1px solid #9e9a9a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5000;
+}
+
+nav .Navbar li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 1rem;
+}
+
+nav .Navbar a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #494429;
+}
+
+nav .Navbar a:hover,
+nav .Navbar a.active {
+    font-weight: bold;
+    color: rgb(18, 189, 166);
+    background-color: #E4DAA9;
+    border-radius: 10%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.profile-wrap {
+    margin-top: 9em;
+    display: flex;
+    flex-direction: column;
+    margin-left: 12em;
+    margin-right: 12em;
+}
+
+.profile-title {
+    text-align: center;
+    margin-bottom: 2em;
+    font-weight: bold;
+    color: #797355;
+}
+
+.profile-image img {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    border: 1px solid #797355;
+}
+
+.profile-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.profile-category {
+    display: flex;
+    gap: 3em;
+    margin-bottom: 2em;
+}
+
+.follower {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.following {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-title-recipe {
+    border-top: 1px solid rgb(18, 189, 166);
+    padding-top: 1em;
+    padding-bottom: 1em;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid rgb(18, 189, 166);
+}
+
+.my-recipe:hover {
+    transform: scale(1.1);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.liked-recipe:hover{
+    transform: scale(1.1);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+#recipes {
+    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3em;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 0;
+  }
+
+  .profile-judul{
+    margin-top: 2em;
+    text-align: center;
+    color: #797355;
+  }
+  
+  .card {
+    border-radius: 20px;
+    background-color: #E4DAA9;
+    max-width: 18em;
+    padding: 1em;
+  }
+  
+  .image-container {
+    position: relative;
+    text-align: center;
+  }
+  
+  img {
+    border-radius: 20px;
+    width: 100%;
+    max-width: 100%;
+    height: 15em;
+  }
+  
+  img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  
+  .container {
+    padding-top: 1em;
+    color: #110f29;
+  }
+  
+  .container h5 {
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .hide {
+    display: none;
+  }
+  .recipe-name{
+    font-weight: bold;
+    color: #797355;
+  }
+
+  .user-settings{
+    border-top: 1px solid rgb(18, 189, 166);
+    padding-top: 1em;
+  }
+  .us-title{
+    text-align: center;
+    font-weight: bold;
+    color: #797355;
+  }
+@media screen and (max-width: 1366px) {
+    html {
+        font-size: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 70%;
+    }
+
+    #menu {
+        display: block;
+    }
+
+    #menu:hover {
+        transform: scale(1.2);
+    }
+
+    nav .Navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: rgba(18, 189, 166, 0.7);
+        width: 20rem;
+        height: 100vh;
+        transition: 0.5s;
+    }
+
+    nav .Navbar.active {
+        right: 0;
+    }
+
+    nav .Navbar a {
+        color: black;
+        display: block;
+        margin: 1.75rem;
+        padding: 0.5rem;
+    }
+
+    .br-img-item {
+        width: 200px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    #menu {
+        display: block;
+    }
+
+    #menu:hover {
+        transform: scale(1.2);
+    }
+
+    nav .Navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: rgba(18, 189, 166, 0.7);
+        width: 20rem;
+        height: 100vh;
+    }
+
+    nav .Navbar.active {
+        right: 0;
+    }
+
+    nav .Navbar a {
+        color: black;
+        display: block;
+        margin: 1.75rem;
+        padding: 0.5rem;
+    }
+
+    .br-img-item {
+        width: 150px;
+        height: 100px;
+    }
+}

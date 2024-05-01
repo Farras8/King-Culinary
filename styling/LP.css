@@ -447,6 +447,12 @@ footer {
     color: white;
     text-decoration: none;
   }
+
+  .latest-recipe-img-item {
+    width: 200px;
+    height: 150px;
+  }
+
 }
 
 @media screen and (max-width: 768px) {

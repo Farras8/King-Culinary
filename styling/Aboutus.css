@@ -80,8 +80,8 @@ nav .Navbar a.active {
 }
 .span-title-2 {
   background: linear-gradient(to right, rgb(18, 189, 166) 57%, #797355 43%);
-  -webkit-background-clip: text; /* Untuk membuat teks sesuai dengan latar belakang */
-  -webkit-text-fill-color: transparent; /* Menghilangkan warna teks */
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
 }
 
 .AboutUs {
