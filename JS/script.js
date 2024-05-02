@@ -9,7 +9,7 @@ $(document).ready(function () {
         // Memeriksa apakah email dan password telah diisi
         if (email !== '' && password !== '') {
             // Jika sudah terisi, arahkan pengguna ke halaman index.html
-            window.location.href = 'page-after-login/index.html';
+            window.location.href = 'page-after-login/Home.html';
         } else {
             // Jika tidak, tampilkan pesan kesalahan atau lakukan tindakan lain sesuai kebutuhan
             alert('Please fill in both email and password fields.');
