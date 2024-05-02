@@ -11,23 +11,27 @@
         rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="styling/addRecipe.css">
+    <link rel="stylesheet" href="../styling/addRecipe.css">
 </head>
 
 <body>
     <!-- Navbar -->
     <nav>
         <div class="logo">
-            <img src="image/King_Culinary_Logo-removebg-preview.png" class="imglogo" alt="logo">
+            <img src="../image/King_Culinary_Logo-removebg-preview.png" class="imglogo" alt="logo">
         </div>
         <div class="Navbar">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="Home.html">Home</a></li>
                 <li><a href="addRecipe.html">Upload Recipe</a></li>
                 <li><a href="Aboutus.html">About Us</a></li>
             </ul>
         </div>
         <div class="cmenu">
+<<<<<<< HEAD:addRecipe.html
+=======
+            <a href="browseBy-dup.html" id="search"><i data-feather="search"></i></a>
+>>>>>>> c56c6c61928c5ad0fe60b5ed43d17550b228f42b:page-after-login/addRecipe.html
             <a href="profile.html" id="user"><i data-feather="user"></i></a>
             <a href="" id="menu"><i data-feather="menu"></i></a>
         </div>
@@ -74,22 +78,9 @@
         <p>&copy; 2024 King Culinary. All rights reserved.</p>
     </footer>
     <script>
-        $(document).ready(function () {
-
-            $(".Navbar ul li a").click(function (e) {
-                e.preventDefault();
-                var targetUrl = $(this).attr("href");
-                $("body").animate({ opacity: 0, marginTop: "100px" }, 500, function () {
-                    window.location.href = targetUrl;
-                });
-            });
-            $("body").animate({ opacity: 1, marginTop: "0" }, 500);
-        });
-    </script>
-    <script>
         feather.replace()
     </script>
-    <script src="JS/addrecipe.js"></script>
-    <script src="JS/script.js"></script>
+    <script src="../JS/addrecipe.js"></script>
+    <script src="../JS/script.js"></script>
 </body>
 </html>

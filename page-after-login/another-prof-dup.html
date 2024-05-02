@@ -13,24 +13,24 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="styling/profile.css">
+    <link rel="stylesheet" href="../styling/profile.css">
 </head>
 
 <body>
     <nav>
         <div class="logo">
-            <img src="image/King_Culinary_Logo-removebg-preview.png" class="imglogo" alt="logo">
+            <img src="../image/King_Culinary_Logo-removebg-preview.png" class="imglogo" alt="logo">
         </div>
         <div class="Navbar">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#" id="up-recipe">Upload Recipe</a></li>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="addRecipe.html">Upload Recipe</a></li>
                 <li><a href="Aboutus.html">About Us</a></li>
             </ul>
         </div>
         <div class="cmenu">
-            <a href="browseBy.html" id="search"><i data-feather="search"></i></a>
-            <a href="login.html" class="btn-login">LOGIN</a>
+            <a href="browseBy-dup.html" id="search"><i data-feather="search"></i></a>
+            <a href="profile.html" id="user"><i data-feather="user"></i></a>
             <a href="" id="menu"><i data-feather="menu"></i></a>
         </div>
 
@@ -38,7 +38,7 @@
     <div class="profile-wrap">
         <div class="profile-main">
             <div class="profile-image">
-                <img src="image/image-people.avif" alt="">
+                <img src="../image/image-people.avif" alt="">
             </div>
             <h2 class="profile-name">Sarah</h2>
             <div class="profile-category">
@@ -61,29 +61,8 @@
 
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/script.js"></script>
     <script>feather.replace()</script>
-    <script>
-        document.getElementById('up-recipe').addEventListener('click', function (event) {
-        // Tampilkan pesan peringatan menggunakan SweetAlert
-        Swal.fire({
-            icon: 'warning',
-            title: 'You should login first to add your recipe.',
-            showCancelButton: true,
-            confirmButtonText: 'Login',
-            cancelButtonText: 'Cancel'
-        }).then((result) => {
-            // Redirect pengguna ke halaman login jika mereka mengklik tombol "Login"
-            if (result.isConfirmed) {
-                window.location.href = 'login.html';
-            }
-        });
-    
-        // Menghentikan aksi default dari link
-        event.preventDefault();
-    });
-    </script>
 </body>
 
 </html>

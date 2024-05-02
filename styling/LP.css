@@ -298,21 +298,21 @@ nav .Navbar a.active {
   height: 150px;
 }
 
-.up-recipe-btn {
+#up-recipe-btn {
   text-align: center;
   background-color: #12bda6;
   padding: 10px;
   border-radius: 20px;
 }
 
-.up-recipe-btn a {
+#up-recipe-btn a {
   font-size: large;
   font-weight: 600;
   color: white;
   text-decoration: none;
 }
 
-.up-recipe-btn:hover {
+#up-recipe-btn:hover {
   background-color: #149180;
   cursor: pointer;
 }
@@ -434,14 +434,14 @@ footer {
     height: 120px;
   }
   
-  .up-recipe-btn {
+  #up-recipe-btn {
     text-align: center;
     background-color: #12bda6;
     padding: 10px;
     border-radius: 20px;
   }
   
-  .up-recipe-btn a {
+  #up-recipe-btn a {
     font-size: 15px;
     font-weight: 600;
     color: white;
@@ -517,14 +517,14 @@ footer {
     height: 100px;
   }
   
-  .up-recipe-btn {
+  #up-recipe-btn {
     text-align: center;
     background-color: #12bda6;
     padding: 10px;
     border-radius: 20px;
   }
   
-  .up-recipe-btn a {
+  #up-recipe-btn a {
     font-size: 15px;
     font-weight: 600;
     color: white;

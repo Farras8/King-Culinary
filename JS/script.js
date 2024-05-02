@@ -9,7 +9,7 @@ $(document).ready(function () {
         // Memeriksa apakah email dan password telah diisi
         if (email !== '' && password !== '') {
             // Jika sudah terisi, arahkan pengguna ke halaman index.html
-            window.location.href = 'index.html';
+            window.location.href = 'page-after-login/Home.html';
         } else {
             // Jika tidak, tampilkan pesan kesalahan atau lakukan tindakan lain sesuai kebutuhan
             alert('Please fill in both email and password fields.');
@@ -37,6 +37,10 @@ $(document).ready(function () {
         }
     });
 });
+
+
+
+
 
 let menu = document.querySelector('#menu');
 let navbar = document.querySelector('.Navbar');
@@ -127,3 +131,42 @@ dropdowns.forEach(dropdown => {
         });
     });
 });
+
+document.getElementById('up-recipe').addEventListener('click', function (event) {
+    // Tampilkan pesan peringatan menggunakan SweetAlert
+    Swal.fire({
+        icon: 'warning',
+        title: 'You should login first to add your recipe.',
+        showCancelButton: true,
+        confirmButtonText: 'Login',
+        cancelButtonText: 'Cancel'
+    }).then((result) => {
+        // Redirect pengguna ke halaman login jika mereka mengklik tombol "Login"
+        if (result.isConfirmed) {
+            window.location.href = 'login.html';
+        }
+    });
+
+    // Menghentikan aksi default dari link
+    event.preventDefault();
+});
+
+document.getElementById('up-recipe-btn').addEventListener('click', function (event) {
+    // Tampilkan pesan peringatan menggunakan SweetAlert
+    Swal.fire({
+        icon: 'warning',
+        title: 'You should login first to add your recipe.',
+        showCancelButton: true,
+        confirmButtonText: 'Login',
+        cancelButtonText: 'Cancel'
+    }).then((result) => {
+        // Redirect pengguna ke halaman login jika mereka mengklik tombol "Login"
+        if (result.isConfirmed) {
+            window.location.href = 'login.html';
+        }
+    });
+
+    // Menghentikan aksi default dari link
+    event.preventDefault();
+});
+

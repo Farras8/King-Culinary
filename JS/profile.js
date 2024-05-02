@@ -3,32 +3,32 @@ let recipes = {
         {
             recipeName: "Recipe 1",
             category: "MyRecipe",
-            image: "image/dinner title.jpeg",
+            image: "../image/dinner title.jpeg",
         },
         {
             recipeName: "Recipe 2",
             category: "LikedRecipe",
-            image: "image/dinner title.jpeg",
+            image: "../image/dinner title.jpeg",
         },
         {
             recipeName: "Recipe 3",
             category: "MyRecipe",
-            image: "image/dinner title.jpeg",
+            image: "../image/dinner title.jpeg",
         },
         {
             recipeName: "Recipe 4",
             category: "LikedRecipe",
-            image: "image/dinner title.jpeg",
+            image: "../image/dinner title.jpeg",
         },
         {
             recipeName: "Recipe 5",
             category: "MyRecipe",
-            image: "image/dinner title.jpeg",
+            image: "../image/dinner title.jpeg",
         },
         {
             recipeName: "Recipe 6",
             category: "LikedRecipe",
-            image: "image/dinner title.jpeg",
+            image: "../image/dinner title.jpeg",
         },
     ],
 };
