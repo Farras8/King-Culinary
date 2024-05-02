@@ -2,69 +2,81 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ivasta - HomePage</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap"
-        rel="stylesheet">
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="styling/profile.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ivasta - HomePage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="styling/profile.css">
 </head>
 
 <body>
-    <nav>
-        <div class="logo">
-            <img src="image/King_Culinary_Logo-removebg-preview.png" class="imglogo" alt="logo">
-        </div>
-        <div class="Navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="addRecipe.html">Upload Recipe</a></li>
-                <li><a href="Aboutus.html">About Us</a></li>
-            </ul>
-        </div>
-        <div class="cmenu">
-            <a href="browseBy.html" id="search"><i data-feather="search"></i></a>
-            <a href="login.html" class="btn-login">LOGIN</a>
-            <a href="profile.html" id="user"><i data-feather="user"></i></a>
-            <a href="" id="menu"><i data-feather="menu"></i></a>
-        </div>
-
-    </nav>
-    <div class="profile-wrap">
-        <div class="profile-main">
-            <div class="profile-image">
-                <img src="image/Image-people-2.avif" alt="">
-            </div>
-            <h2 class="profile-name">Luna</h2>
-            <div class="profile-category">
-                <div class="follower">
-                    <h4>Follower</h4>
-                    <h5>1</h5>
-                </div>
-                <div class="following">
-                    <h4>Following</h4>
-                    <h5>1</h5>
-                </div>
-            </div>
-        </div>
-        <div class="profile-title-recipe">
-            <div class="my-recipe" onclick="filterProduct('MyRecipe')">My Recipe</div>
-            <div class="liked-recipe" onclick="filterProduct('LikedRecipe')">Liked Recipe</div>
-        </div>
-        <h2 class="profile-judul"></h2>
-        <div id="recipes"></div>
-        <div class="user-settings">
-            <h2 class="us-title">User Settings</h2>
-        </div>
+  <nav>
+    <div class="logo">
+      <img src="image/King_Culinary_Logo-removebg-preview.png" class="imglogo" alt="logo">
     </div>
+    <div class="Navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="addRecipe.html">Upload Recipe</a></li>
+        <li><a href="Aboutus.html">About Us</a></li>
+      </ul>
+    </div>
+    <div class="cmenu">
+      <a href="browseBy.html" id="search"><i data-feather="search"></i></a>
+      <a href="profile.html" id="user"><i data-feather="user"></i></a>
+      <a href="" id="menu"><i data-feather="menu"></i></a>
+    </div>
+  </nav>
+  <div class="profile-wrap">
+    <div class="profile-main">
+      <div class="profile-image">
+        <img src="image/Image-people-2.avif" alt="">
+      </div>
+      <h2 class="profile-name">Luna</h2>
+      <div class="profile-category">
+        <div class="follower">
+          <h4>Follower</h4>
+          <h5>1</h5>
+        </div>
+        <div class="following">
+          <h4>Following</h4>
+          <h5>1</h5>
+        </div>
+      </div>
+    </div>
+    <div class="profile-title-recipe">
+      <div class="my-recipe" onclick="filterProduct('MyRecipe')">My Recipe</div>
+      <div class="liked-recipe" onclick="filterProduct('LikedRecipe')">Liked Recipe</div>
+    </div>
+    <h2 class="profile-judul"></h2>
+    <div id="recipes"></div>
+    <div class="user-settings">
+      <h2 class="us-title">User Settings</h2>
+      <ul>
+        <li><a href="change_profile.html">Change Profile</a></li>
+        <li><a id="delete" href="#" onclick="confirmDeleteAccount()">Delete Account</a></li>
+        <li><a href="index.html">Log Out</a></li>
+      </ul>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2024 King Culinary. All rights reserved.</p>
+  </footer>
 
-    <script src="js/profile.js"></script>
-    <script>feather.replace()</script>
+  <script src="js/profile.js"></script>
+  <script>
+    feather.replace();
+    function confirmDeleteAccount() {
+      if (confirm("Are you sure you want to delete your account?")) {
+        window.location.href = "index.html";
+      }
+    }
+  </script>
 </body>
 
 </html>

@@ -232,7 +232,59 @@ nav .Navbar a.active {
     text-align: center;
     font-weight: bold;
     color: #797355;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid rgb(18, 189, 166);
   }
+
+  .user-settings ul {
+    /* Remove default list styling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding-top: 20px; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    padding-bottom: 10px;
+  }
+  
+  .user-settings ul li a {
+    /* Button styles */
+    padding-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #a39c7b; /* Adjust background color */
+    color: #110f29; /* Adjust text color */
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer; /* Indicate clickable behavior */
+    
+    /* Centering the buttons horizontally */
+    text-align: center;
+  }
+  
+  .user-settings ul li a:hover {
+    background-color: rgb(18, 189, 166); /* Adjust hover background color */
+    color: white; /* Adjust hover text color */
+  }
+
+  #delete:hover{
+    background-color: red;
+    color: white;
+  }
+
+  footer {
+    padding: 1em;
+    background-color: rgb(177, 169, 128);
+    margin-top: 1em;
+    text-align: center;
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
 @media screen and (max-width: 1366px) {
     html {
         font-size: 80%;

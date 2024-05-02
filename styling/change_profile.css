@@ -1,0 +1,164 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+  }
+  
+  body {
+    color: black;
+    background-color: #E4DAA9;
+  }
+  
+  .imglogo {
+    height: 100px;
+    width: 200px;
+  }
+  
+  .cmenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  #menu {
+    display: none;
+    color: black;
+  }
+  
+  #search{
+    font-weight: bold;
+    color: #494429;
+  }
+  
+  #search:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  
+  .btn-login{
+    font-weight: bold;
+    text-decoration: none;
+    color: #494429;
+  }
+  
+  .btn-login:hover{
+    text-decoration: underline;
+  }
+  
+  #user {
+    font-weight: bold;
+    color: #494429;
+  }
+  
+  #user:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 6%;
+    background-color: rgba(177, 169, 128, 0.7);
+    border-bottom: 1px solid #9e9a9a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5000;
+  }
+  
+  nav .Navbar li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 1rem;
+  }
+  
+  nav .Navbar a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #494429;
+  }
+  
+  nav .Navbar a:hover,
+  nav .Navbar a.active {
+    font-weight: bold;
+    color: rgb(18, 189, 166);
+    background-color: #E4DAA9;
+    border-radius: 10%;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 130px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Form styles */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"]{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+  
+  input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #494429;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: rgb(18, 189, 166);
+  }
+
+  footer {
+    padding: 1em;
+    background-color: rgb(177, 169, 128);
+    margin-top: 1em;
+    text-align: center;
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: 500;
+    bottom: auto;
+  }
+  
