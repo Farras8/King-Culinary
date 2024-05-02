@@ -19,6 +19,8 @@ body {
 
 .cmenu {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -27,15 +29,33 @@ body {
   color: black;
 }
 
+#search{
+  font-weight: bold;
+  color: #494429;
+}
+
+#search:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.btn-login{
+  font-weight: bold;
+  text-decoration: none;
+  color: #494429;
+}
+
+.btn-login:hover{
+  text-decoration: underline;
+}
+
 #user {
+  font-weight: bold;
   color: #494429;
 }
 
 #user:hover {
-  color: rgb(18, 189, 166);
-  background-color: #E4DAA9;
-  border-radius: 50%;
-  padding: 10px;
+  transform: scale(1.1);
   cursor: pointer;
 }
 
@@ -62,6 +82,7 @@ nav .Navbar li {
 nav .Navbar a {
   text-decoration: none;
   font-size: 1.2rem;
+  font-weight: bold;
   color: #494429;
 }
 
@@ -267,7 +288,7 @@ footer {
     position: absolute;
     top: 100%;
     right: -100%;
-    background-color: rgba(198, 201, 204, 0.9);
+    background-color: rgba(177, 169, 128, 0.7);
     width: 20rem;
     height: 100vh;
     transition: 0.5s;
@@ -311,7 +332,7 @@ footer {
     position: absolute;
     top: 100%;
     right: -100%;
-    background-color: rgba(198, 201, 204, 0.9);
+    background-color: rgba(177, 169, 128, 0.7);
     width: 20rem;
     height: 100vh;
   }
