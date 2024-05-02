@@ -137,7 +137,8 @@
     font-size: 16px;
   }
   
-  input[type="submit"] {
+  #submitButton {
+    text-align: center;
     padding: 10px 20px;
     background-color: #494429;
     color: white;
@@ -147,7 +148,7 @@
     font-weight: bold;
   }
   
-  input[type="submit"]:hover {
+  #submitButton:hover {
     background-color: rgb(18, 189, 166);
   }
 

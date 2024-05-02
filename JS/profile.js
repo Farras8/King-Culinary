@@ -96,3 +96,10 @@ function filterProduct(value) {
 window.onload = () => {
     filterProduct("MyRecipe"); // Set the default filter to "MyRecipe" on page load
 };
+
+function confirmDeleteAccount() {
+    if (confirm("Are you sure you want to delete your account?")) {
+      // Redirect to index.html on confirmation
+      window.location.href = "../index.html";
+    }
+  }

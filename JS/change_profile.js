@@ -60,3 +60,23 @@ document.getElementById('profile_photo').onchange = function (evt) {
         }
     }
 };
+
+$(document).ready(function () {
+    $(".Navbar ul li a").click(function (e) {
+        e.preventDefault();
+        var targetUrl = $(this).attr("href");
+        $("body").animate({ opacity: 0, marginTop: "100px" }, 500, function () {
+            window.location.href = targetUrl;
+        });
+    });
+    $("body").animate({ opacity: 1, marginTop: "0" }, 500);
+});
+
+function confirmChangeAccount() {
+    if (confirm("Are you sure you want to change your account data?")) {
+        window.location.href = "profile.html";
+    }
+};
+
+
+feather.replace();
