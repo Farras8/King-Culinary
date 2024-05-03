@@ -103,3 +103,42 @@ function addCookingStep(button) {
     container.insertBefore(textarea, button);
     container.insertBefore(removeButton, button);
 }
+
+    function confirmSaveRecipe() {
+        // Check if all required fields are filled
+        if (checkRequiredFields()) {
+            // If all required fields are filled, prompt confirmation dialog
+            if (confirm("Are you sure you want to save your recipe for your own?")) {
+                // Redirect to index.html on confirmation
+                window.location.href = "../page-after-login/Home.html";
+            }
+        } else {
+            // Display an alert if any required field is empty
+            alert("Please fill in all required fields.");
+        }
+    }
+
+    function confirmShareRecipe() {
+        // Check if all required fields are filled
+        if (checkRequiredFields()) {
+            // If all required fields are filled, prompt confirmation dialog
+            if (confirm("Are you sure you want to share your recipe to the public?")) {
+                // Redirect to index.html on confirmation
+                window.location.href = "../page-after-login/Home.html";
+            }
+        } else {
+            // Display an alert if any required field is empty
+            alert("Please fill in all required fields.");
+        }
+    }
+
+    // Function to check if all required fields are filled
+    function checkRequiredFields() {
+        var requiredFields = document.querySelectorAll('input[required], textarea[required], select[required]');
+        for (var i = 0; i < requiredFields.length; i++) {
+            if (!requiredFields[i].value.trim()) {
+                return false; // Return false if any required field is empty
+            }
+        }
+        return true; // Return true if all required fields are filled
+    }x
