@@ -1,3 +1,4 @@
+/* Common styles */
 * {
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
@@ -162,4 +163,33 @@ img {
 .login-input:not(:placeholder-shown).login-input:not(:focus)+.login-label {
     top: -12px;
     font-size: var(--small-font-size);
+}
+
+/* Media Queries */
+
+/* For screens smaller than 1366px */
+@media (max-width: 1366px) {
+    .login-form {
+        width: 40%;
+    }
+}
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+    .login-form {
+        width: 60%;
+    }
+    .login-title{
+        color: white;
+    }
+}
+
+/* For screens smaller than 450px */
+@media (max-width: 450px) {
+    .login-form {
+        width: 80%;
+    }
+    .login-title{
+        color: white;
+    }
 }

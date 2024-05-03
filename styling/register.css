@@ -163,3 +163,29 @@ img {
     top: -12px;
     font-size: var(--small-font-size);
 }
+
+@media (max-width: 1366px) {
+    .register-form {
+        width: 40%;
+    }
+}
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+    .register-form {
+        width: 60%;
+    }
+    .register-title{
+        color: white;
+    }
+}
+
+/* For screens smaller than 450px */
+@media (max-width: 450px) {
+    .register-form {
+        width: 80%;
+    }
+    .register-title{
+        color: white;
+    }
+}

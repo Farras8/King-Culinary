@@ -103,3 +103,5 @@ function confirmDeleteAccount() {
       window.location.href = "../index.html";
     }
   }
+
+  
