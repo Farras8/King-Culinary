@@ -1,34 +1,34 @@
 let recipes = {
     data: [
         {
-            recipeName: "Recipe 1",
+            recipeName: "Pancakes",
             category: "MyRecipe",
-            image: "../image/dinner title.jpeg",
+            image: "https://www.allrecipes.com/thmb/kvvETNZfOtAptH69gUsK6FaKRKA=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/21014-Good-old-Fashioned-Pancakes-mfs_001-1fa26bcdedc345f182537d95b6cf92d8.jpg",
         },
         {
-            recipeName: "Recipe 2",
+            recipeName: "Omelette",
             category: "LikedRecipe",
-            image: "../image/dinner title.jpeg",
+            image: "https://joyfoodsunshine.com/wp-content/uploads/2022/07/best-omelette-recipe-1.jpg",
         },
         {
-            recipeName: "Recipe 3",
+            recipeName: "Smoothie Bowl",
             category: "MyRecipe",
-            image: "../image/dinner title.jpeg",
+            image: "https://images.themodernproper.com/billowy-turkey/production/posts/2021/Smoothie-Bowl-8.jpeg?w=800&q=82&auto=format&fit=crop&dm=1641225383&s=aa57e01f365c4d0887b3e21589a33029",
         },
         {
-            recipeName: "Recipe 4",
-            category: "LikedRecipe",
-            image: "../image/dinner title.jpeg",
-        },
-        {
-            recipeName: "Recipe 5",
+            recipeName: "Avocado Toast",
             category: "MyRecipe",
-            image: "../image/dinner title.jpeg",
+            image: "https://gimmedelicious.com/wp-content/uploads/2016/07/avocado-toast-7-of-13.jpg",
         },
         {
-            recipeName: "Recipe 6",
+            recipeName: "French Toast",
             category: "LikedRecipe",
-            image: "../image/dinner title.jpeg",
+            image: "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2008/3/26/0/IE0309_French-Toast.jpg.rend.hgtvcom.1280.720.suffix/1431730431340.jpeg",
+        },
+        {
+            recipeName: "Chocolate Cake",
+            category: "LikedRecipe",
+            image: "https://scientificallysweet.com/wp-content/uploads/2023/06/IMG_4087-er-new1.jpg",
         },
     ],
 };
