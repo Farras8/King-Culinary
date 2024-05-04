@@ -294,6 +294,7 @@ nav .Navbar a.active {
 }
 
 .up-recipe-image img {
+  border-radius: 20px;
   width: 200px;
   height: 150px;
 }

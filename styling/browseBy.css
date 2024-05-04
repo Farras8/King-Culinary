@@ -185,6 +185,8 @@ nav .Navbar a.active {
 }
 
 .menu {
+  overflow-y: auto; 
+  max-height: 400px; 
   list-style: none;
   padding: 1em;
   background: rgb(18, 189, 166);

@@ -61,22 +61,102 @@ document.getElementById('profile_photo').onchange = function (evt) {
     }
 };
 
-$(document).ready(function () {
-    $(".Navbar ul li a").click(function (e) {
-        e.preventDefault();
-        var targetUrl = $(this).attr("href");
-        $("body").animate({ opacity: 0, marginTop: "100px" }, 500, function () {
-            window.location.href = targetUrl;
-        });
-    });
-    $("body").animate({ opacity: 1, marginTop: "0" }, 500);
-});
 
-function confirmChangeAccount() {
-    if (confirm("Are you sure you want to change your account data?")) {
-        window.location.href = "profile.html";
-    }
-};
 
 
 feather.replace();
+
+
+const form = document.querySelector('form');
+const profilePhotoInput = document.getElementById('profile_photo');
+const usernameInput = document.getElementById('username');
+const emailInput = document.getElementById('email');
+const newPasswordInput = document.getElementById('new_password');
+const repeatPasswordInput = document.getElementById('repeat_password');
+const submitButton = document.getElementById('submitButton');
+
+function showError(input, message) {
+  const errorSpan = document.getElementById(`${input.id}-error`);
+  errorSpan.textContent = message;
+  errorSpan.style.display = 'block';
+  input.classList.add('error');
+}
+
+function hideError(input) {
+  const errorSpan = document.getElementById(`${input.id}-error`);
+  errorSpan.textContent = '';
+  errorSpan.style.display = 'none';
+  input.classList.remove('error');
+}
+
+function validateProfilePhoto() {
+  // Validasi profil foto, jika perlu
+  // Di sini Anda dapat menambahkan validasi jika file harus diisi atau format file harus sesuai, jika diperlukan.
+}
+
+function validateUsername() {
+  const username = usernameInput.value.trim();
+  if (username === '') {
+    showError(usernameInput, 'Username is required');
+  } else {
+    hideError(usernameInput);
+  }
+}
+
+function validateEmail() {
+  const email = emailInput.value.trim();
+  if (email === '') {
+    showError(emailInput, 'Email is required');
+  } else if (!/\S+@\S+\.\S+/.test(email)) {
+    showError(emailInput, 'Email is not valid');
+  } else {
+    hideError(emailInput);
+  }
+}
+
+function validatePassword() {
+  const newPassword = newPasswordInput.value.trim();
+  const repeatPassword = repeatPasswordInput.value.trim();
+
+  if (newPassword === '') {
+    showError(newPasswordInput, 'Password is required');
+  } else if (newPassword.length < 7 || !/[!@#$%^&*]/.test(newPassword)) {
+    showError(
+      newPasswordInput,
+      'Password must be at least 7 characters long and contain at least one symbol (!@#$%^&*)'
+    );
+  } else {
+    hideError(newPasswordInput);
+  }
+
+  if (repeatPassword === '') {
+    showError(repeatPasswordInput, 'Please repeat your password');
+  } else if (newPassword !== repeatPassword) {
+    showError(repeatPasswordInput, 'Passwords do not match');
+  } else {
+    hideError(repeatPasswordInput);
+  }
+}
+
+function validateForm(event) {
+  event.preventDefault();
+  validateProfilePhoto();
+  validateUsername();
+  validateEmail();
+  validatePassword();
+
+  if (!document.querySelectorAll('.error').length) {
+    const confirmReset = confirm('Are you sure for submitting this form?');
+    if (confirmReset) {
+      form.reset();
+      alert('Thank You for updating your profile');
+    }
+  }
+}
+
+form.addEventListener('submit', validateForm);
+submitButton.addEventListener('click', validateForm);
+usernameInput.addEventListener('blur', validateUsername);
+emailInput.addEventListener('blur', validateEmail);
+newPasswordInput.addEventListener('blur', validatePassword);
+repeatPasswordInput.addEventListener('blur', validatePassword);

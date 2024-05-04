@@ -15,33 +15,32 @@
 </head>
 
 <body>
-    <div class="login">
-        <form action="" class="login-form">
-            <h1 class="login-title">Login</h1>
-            <div class="login-content">
-                <div class="login-box">
-                    <i data-feather="mail" class="user-icon"></i>
-                    <div class="login-box-input">
-                        <input type="email" required class="login-input" id="login-email" placeholder=" ">
-                        <label for="login-email" class="login-label">Email</label>
+    <div class="wrap-login">
+        <div class="login">
+            <form action="" class="login-form">
+                <h1 class="login-title">Login</h1>
+                <div class="login-content">
+                    <div class="login-box">
+                        <div class="login-box-input">
+                            <i data-feather="mail"></i>
+                            <input type="email" required class="login-input" id="login-email" placeholder="Email">
+                        </div>
+                        <span id="email-error" class="error-message"></span>
+                    </div>
+                    <div class="login-box">
+                        <div class="login-box-input">
+                            <i data-feather="lock"></i>
+                            <input type="password" required class="login-input" id="login-pass" placeholder="Password">
+                        </div>
+                        <span id="password-error" class="error-message"></span>
                     </div>
                 </div>
-                <div class="login-box">
-                    <i data-feather="lock" class="pw-icon"></i>
-                    <div class="login-box-input">
-                        <input type="password" required class="login-input" id="login-pass" placeholder=" ">
-                        <label for="login-pass" class="login-label">Password</label>
-                    </div>
-                </div>
-            </div>
-            <div class="login-check">
-                <a href="#" class="login__forgot">Forgot Password?</a>
-            </div>
-            <button type="submit" class="login-button">Login</button>
-            <p class="login-register">
-                Don't have an account? <a href="register.html">Register</a>
-            </p>
-        </form>
+                <button type="submit" class="login-button">Login</button>
+                <p class="login-register">
+                    Don't have an account? <a href="register.html">Register</a>
+                </p>
+            </form>
+        </div>
     </div>
     <script>
         feather.replace()

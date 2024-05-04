@@ -4,48 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title"register</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap"
-        rel="stylesheet">
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="styling/register.css">
+    <title>register</title> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap"
+            rel="stylesheet">
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="styling/login.css">
 </head>
 
 <body>
-    <div class="register">
-        <form action="" class="register-form">
-            <h1 class="register-title">Sign Up</h1>
-            <div class="register-content">
-                <div class="register-box">
-                    <i data-feather="mail" class="user-icon"></i>
-                    <div class="register-box-input">
-                        <input type="email" required class="register-input" id="register-email" placeholder=" ">
-                        <label for="register-email" class="register-label">Email</label>
+    <div class="wrap-login">
+        <div class="login">
+            <form action="" class="login-form">
+                <h1 class="login-title">Register</h1>
+                <div class="login-content">
+                    <div class="login-box">
+                        <div class="login-box-input">
+                            <i data-feather="mail"></i>
+                            <input type="email" required class="login-input" id="login-email" placeholder="Email">
+                        </div>
+                        <span id="email-error" class="error-message"></span>
+                    </div>
+                    <div class="login-box">
+                        <div class="login-box-input">
+                            <i data-feather="user"></i>
+                            <input type="text" required class="login-input" id="login-username" placeholder="username">
+                        </div>
+                        <span id="name-error" class="error-message"></span>
+                    </div>
+                    <div class="login-box">
+                        <div class="login-box-input">
+                            <i data-feather="lock"></i>
+                            <input type="password" required class="login-input" id="login-pass" placeholder="Password">
+                        </div>
+                        <span id="password-error" class="error-message"></span>
+                    </div>
+                    <div class="login-box">
+                        <div class="login-box-input">
+                            <i data-feather="lock"></i>
+                            <input type="password" required class="login-input" id="login-pass-repeat" placeholder="Confirm Password">
+                        </div>
+                        <span id="repeat-password-error" class="error-message"></span>
                     </div>
                 </div>
-                <div class="register-box">
-                    <i data-feather="user" class="pw-icon"></i>
-                    <div class="register-box-input">
-                        <input type="text" required class="register-input" id="register-user" placeholder=" ">
-                        <label for="register-pass" class="register-label">Username</label>
-                    </div>
-                </div>
-                <div class="register-box">
-                    <i data-feather="lock" class="pw-icon"></i>
-                    <div class="register-box-input">
-                        <input type="password" required class="register-input" id="register-pass" placeholder=" ">
-                        <label for="register-pass" class="register-label">Password</label>
-                    </div>
-                </div>
-            </div>
-            <button type="submit" class="register-button">Sign Up</button>
-            <p class="register-register">
-                Already have an account? <a href="login.html">Login</a>
-            </p>
-        </form>
+                <button type="submit" class="register-button">register</button>
+                <p class="login-register">
+                    Already an account? <a href="login.html">Login</a>
+                </p>
+            </form>
+        </div>
     </div>
     <script>
         feather.replace()

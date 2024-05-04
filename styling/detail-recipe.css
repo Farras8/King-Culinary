@@ -169,11 +169,27 @@
   color: #E4DAA9;
   padding: 1em;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 3em;
   background-color: rgb(18, 189, 166);
   border-radius: 20px;
   margin-bottom: 5px;
+  font-weight: bolder;
 }
+.card-ing-plus{
+  color: #E4DAA9;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3em;
+  background-color: rgb(18, 189, 166);
+  border-radius: 20px;
+  margin-bottom: 5px;
+  font-weight: bolder;
+}
+
 
 .step-cook h1{
   border-top: 1px solid rgb(18, 189, 166);
@@ -183,9 +199,22 @@
   font-weight: bold;
   color: #797355;
 }
+.trash-btn{
+  color: rgb(141, 42, 42);
+}
+.trash-btn:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.plus-btn:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
 
 .step-cook-card{
+  font-weight: bolder;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 3em;
   margin-bottom: 10px;
@@ -203,17 +232,38 @@
   width: 30px;
   height: 50px;
 }
-.comment-section{
-  margin-bottom: 5em;
-}
-.comment-section h1{
+.btn-edit{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   border-top: 1px solid rgb(18, 189, 166);
   padding-top: 3em; 
-  margin-bottom: 1em;
-  text-align: center;
-  font-weight: bold;
-  color: #797355;
 }
+.save-recipe{
+  padding: 1em;
+  width: 300px;
+  border-radius: 20px;
+  background-color: rgb(18, 189, 166);
+  font-weight: bolder;
+  color: #E4DAA9;
+}
+.save-recipe:hover{
+  cursor: pointer;
+  background-color: rgb(37, 102, 93)
+}
+.delete-recipe{
+  padding: 1em;
+  width: 300px;
+  border-radius: 20px;
+  background-color: red;
+  font-weight: bolder;
+  color: #E4DAA9;
+}
+.delete-recipe:hover{
+  cursor: pointer;
+  background-color: rgb(129, 27, 27);
+}
+
 .star-button{
   display: flex;
   align-items: center;
@@ -370,6 +420,14 @@ footer {
       padding: 1em;
       padding-right: 40px;
     }
+    .save-recipe{
+      width: 150px;
+    }
+
+    .delete-recipe{
+      width: 150px;
+    }
+
   }
   
   @media screen and (max-width: 450px) {

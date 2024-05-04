@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap"
         rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="../styling/LP.css">
 </head>
@@ -64,7 +65,7 @@
     </div>
 
     <!--Browse-By Section-->
-    <section class="Browse-By">
+    <section class="Browse-By" data-aos="fade-down" data-aos-duration="1000">
         <h1 class="br-title">Browse <span class="title-span">By</span></h1>
         <div class="br-img-list">
             <div class="br-img-card">
@@ -92,7 +93,7 @@
     </section>
 
     <!--Upload Recipe Section-->
-    <section class="up-recipe">
+    <section class="up-recipe" data-aos="fade-down" data-aos-duration="1000">
         <h1 class="up-recipe-title">Upload <span class="title-span">Recipe</span></h1>
         <div class="up-recipe-card">
             <div class="up-recipe-card-atas">
@@ -110,7 +111,7 @@
     </section>
 
     <!--Latest Recipe-->
-    <section class="latest-recipe">
+    <section class="latest-recipe" data-aos="fade-down" data-aos-duration="1000">
         <h1 class="latest-recipe-title">Latest <span class="title-span">Recipe</span></h1>
         <div class="latest-recipe-img-list">
             <div class="latest-recipe-img-card">
@@ -159,6 +160,10 @@
         feather.replace()
     </script>
     <script src="../js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
 </body>
 
 </html>
