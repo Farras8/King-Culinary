@@ -1,62 +1,62 @@
 * {
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    outline: none;
-    border: none;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
 }
 
 body {
-    color: black;
-    background-color: #E4DAA9;
+  color: black;
+  background-color: #E4DAA9;
 }
 
 .imglogo {
-    height: 100px;
-    width: 200px;
+  height: 100px;
+  width: 200px;
 }
 
 .cmenu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 #menu {
-    display: none;
-    color: black;
+  display: none;
+  color: black;
 }
 
-#search {
-    font-weight: bold;
-    color: #494429;
+#search{
+  font-weight: bold;
+  color: #494429;
 }
 
-#search:hover {
-    transform: scale(1.1);
-    cursor: pointer;
+#search:hover{
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
-.btn-login {
-    font-weight: bold;
-    text-decoration: none;
-    color: #494429;
+.btn-login{
+  font-weight: bold;
+  text-decoration: none;
+  color: #494429;
 }
 
-.btn-login:hover {
-    text-decoration: underline;
+.btn-login:hover{
+  text-decoration: underline;
 }
 
 #user {
-    font-weight: bold;
-    color: #494429;
+  font-weight: bold;
+  color: #494429;
 }
 
 #user:hover {
-    transform: scale(1.1);
-    cursor: pointer;
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 nav {
@@ -74,26 +74,26 @@ nav {
 }
 
 nav .Navbar li {
-    display: inline-block;
-    list-style-type: none;
-    margin: 0 1rem;
+  display: inline-block;
+  list-style-type: none;
+  margin: 0 1rem;
 }
 
 nav .Navbar a {
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #494429;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #494429;
 }
 
 nav .Navbar a:hover,
 nav .Navbar a.active {
-    font-weight: bold;
-    color: rgb(18, 189, 166);
-    background-color: #E4DAA9;
-    border-radius: 10%;
-    padding: 10px;
-    cursor: pointer;
+  font-weight: bold;
+  color: rgb(18, 189, 166);
+  background-color: #E4DAA9;
+  border-radius: 10%;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .profile-wrap {
