@@ -371,7 +371,7 @@ footer {
     position: absolute;
     top: 100%;
     right: -100%;
-    background-color: rgba(18, 189, 166, 0.7);
+    background-color: rgba(177, 169, 128, 0.7);
     width: 20rem;
     height: 100vh;
     transition: 0.5s;
@@ -447,7 +447,7 @@ footer {
     position: absolute;
     top: 100%;
     right: -100%;
-    background-color: rgba(18, 189, 166, 0.7);
+    background-color: rgba(177, 169, 128, 0.7);
     width: 20rem;
     height: 100vh;
   }

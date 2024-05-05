@@ -100,8 +100,8 @@ nav .Navbar a.active {
     margin-top: 9em;
     display: flex;
     flex-direction: column;
-    margin-left: 12em;
-    margin-right: 12em;
+    margin-left: 3em;
+    margin-right: 3em;
 }
 
 .profile-title {
@@ -143,7 +143,22 @@ nav .Navbar a.active {
     flex-direction: column;
     align-items: center;
 }
-
+.follow-btn{
+  padding: 10px;
+  width: 500px;
+  margin-bottom: 3em;
+  text-align: center;
+  background-color: #12bda6;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+}
+.follow-btn:hover{
+  cursor: pointer;
+  background-color:#167266 ;
+}
 .profile-title-recipe {
     border-top: 1px solid rgb(18, 189, 166);
     padding-top: 1em;
@@ -205,7 +220,7 @@ nav .Navbar a.active {
     transform: scale(1.05);
     cursor: pointer;
   }
-  
+
   .container {
     padding-top: 1em;
     color: #110f29;
@@ -380,7 +395,7 @@ input[type="file"] {
         position: absolute;
         top: 100%;
         right: -100%;
-        background-color: rgba(18, 189, 166, 0.7);
+        background-color: rgba(177, 169, 128, 0.7);
         width: 20rem;
         height: 100vh;
         transition: 0.5s;
@@ -401,6 +416,15 @@ input[type="file"] {
         width: 200px;
         height: 150px;
     }
+    .profile-image img{
+      margin-top: 3em;
+      height: 200px;
+      width: 200px;
+    }
+    .follow-btn{
+      padding: 5px;
+      width: 250px;
+    }
 }
 
 @media screen and (max-width: 450px) {
@@ -420,7 +444,7 @@ input[type="file"] {
         position: absolute;
         top: 100%;
         right: -100%;
-        background-color: rgba(18, 189, 166, 0.7);
+        background-color: rgba(177, 169, 128, 0.7);
         width: 20rem;
         height: 100vh;
     }
@@ -439,5 +463,14 @@ input[type="file"] {
     .br-img-item {
         width: 150px;
         height: 100px;
+    }
+    .profile-image img{
+      margin-top: 3em;
+      height: 150px;
+      width: 150px;
+    }
+    .follow-btn{
+      padding: 5px;
+      width: 200px;
     }
 }

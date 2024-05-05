@@ -107,6 +107,10 @@
   justify-content: space-between;
   gap: 1em;
 }
+.ba-title h1{
+  font-weight: bold;
+  color: rgb(18, 189, 166);
+}
 
 .ba-image img{
   height: 400px;
@@ -177,6 +181,21 @@
   margin-bottom: 5px;
   font-weight: bolder;
 }
+
+.card-ing-1{
+  color: #E4DAA9;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  gap: 3em;
+  background-color: rgb(18, 189, 166);
+  border-radius: 20px;
+  margin-bottom: 5px;
+  font-weight: bolder;
+}
+
+
+
 .card-ing-plus{
   color: #E4DAA9;
   padding: 1em;
@@ -219,12 +238,29 @@
   gap: 3em;
   margin-bottom: 10px;
 }
+
+.step-cook-card-1{
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  gap: 3em;
+  margin-bottom: 10px;
+}
+.step-cook-card-1 + .step-cook-card-1 {
+  border-top: 1px solid rgb(18, 189, 166);
+  padding-top: 3em; 
+}
+.word-step-cook-1{
+  text-align: center;
+  margin-left: 3em;
+}
 .step-cook-card + .step-cook-card {
   border-top: 1px solid rgb(18, 189, 166);
   padding-top: 3em; 
 }
 .no-step-cook{
   display: flex;
+  padding: 1em;
   justify-content: center;
   align-items: center;
   background-color: rgba(18, 189, 166,0.5);
@@ -232,6 +268,17 @@
   width: 30px;
   height: 50px;
 }
+.comment-section-1{
+  border-top: 1px solid rgb(18, 189, 166);
+  padding-top: 7em; 
+}
+.comment-section-1 h1{
+  text-align: center;
+  margin-bottom: 1em;
+  font-weight: bold;
+  color: #797355;
+}
+
 .btn-edit{
   display: flex;
   justify-content: space-around;
@@ -325,6 +372,8 @@
   padding-top: 1em; 
 }
 footer {
+  position: absolute;
+  left: 0;
   padding: 1em;
   background-color: rgb(177, 169, 128);
   text-align: center;
@@ -393,7 +442,7 @@ footer {
       position: absolute;
       top: 100%;
       right: -100%;
-      background-color: rgba(18, 189, 166, 0.7);
+      background-color: rgba(177, 169, 128, 0.7);
       width: 20rem;
       height: 100vh;
       transition: 0.5s;
@@ -447,7 +496,7 @@ footer {
       position: absolute;
       top: 100%;
       right: -100%;
-      background-color: rgba(18, 189, 166, 0.7);
+      background-color: rgba(177, 169, 128, 0.7);
       width: 20rem;
       height: 100vh;
     }
