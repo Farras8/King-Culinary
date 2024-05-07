@@ -441,12 +441,25 @@ footer {
   }
   #recipes {
     display: grid;
-    grid-template-columns: auto auto  ;
+    grid-template-columns: auto auto;
     grid-column-gap: 3em;
     padding: 2em 0;
     justify-content: center;
     align-items: center;
   }
+
+  .image-container {
+    width: 135px; /* Set a fixed width for each picture container */
+    height: 135px; /* Set a fixed height for each picture container */
+    overflow: hidden; /* Hide any content that overflows the container */
+  }
+  
+  .image-container img {
+    width: 100%; /* Ensure the image fills the container */
+    height: 100%; /* Ensure the image fills the container */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+  }
+
   .card {
     border-radius: 20px;
     max-width: 18em;
@@ -527,6 +540,19 @@ footer {
     justify-content: center;
     align-items: center;
   }
+
+  .image-container {
+    width: 120px; /* Set a fixed width for each picture container */
+    height: 120px; /* Set a fixed height for each picture container */
+    overflow: hidden; /* Hide any content that overflows the container */
+  }
+  
+  .image-container img {
+    width: 100%; /* Ensure the image fills the container */
+    height: 100%; /* Ensure the image fills the container */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+  }
+
   .card {
     border-radius: 20px;
     max-width: 18em;

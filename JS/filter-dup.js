@@ -13,12 +13,12 @@ let recipes = {
         {
             recipeName: "Smoothie Bowl",
             category: "Breakfast",
-            image: "https://images.themodernproper.com/billowy-turkey/production/posts/2021/Smoothie-Bowl-8.jpeg?w=800&q=82&auto=format&fit=crop&dm=1641225383&s=aa57e01f365c4d0887b3e21589a33029",
+            image: "../image/7010038_CL_Bowls_Golden_Mango_Smoothie_Bowl_119-a7f61a8de85846ffbc28bdb174de0263.jpg",
         },
         {
             recipeName: "Avocado Toast",
             category: "Breakfast",
-            image: "https://gimmedelicious.com/wp-content/uploads/2016/07/avocado-toast-7-of-13.jpg",
+            image: "https://joyfoodsunshine.com/wp-content/uploads/2022/07/best-omelette-recipe-1.jpg",
         },
         {
             recipeName: "French Toast",
@@ -33,17 +33,17 @@ let recipes = {
         {
             recipeName: "Apple Pie",
             category: "Dessert",
-            image: "https://schoolnightvegan.com/wp-content/uploads/2022/11/vegan-apple-pie-25.webp",
+            image: "../image/top-view-apple-pie-cake-600nw-146092667.webp",
         },
         {
             recipeName: "Tiramisu",
             category: "Dessert",
-            image: "https://bakewithzoha.com/wp-content/uploads/2023/08/chocolate-tiramisu-slice-6-scaled.jpg",
+            image: "../image/top-view-apple-pie-cake-600nw-146092667.webp",
         },
         {
             recipeName: "Cheesecake",
             category: "Dessert",
-            image: "https://bakewithzoha.com/wp-content/uploads/2023/08/chocolate-tiramisu-slice-6-scaled.jpg",
+            image: "https://www.keep-calm-and-eat-ice-cream.com/wp-content/uploads/2022/08/Ice-cream-sundae-hero-10.jpg",
         },
         {
             recipeName: "Ice Cream Sundae",
@@ -53,7 +53,7 @@ let recipes = {
         {
             recipeName: "Spaghetti Bolognese",
             category: "Dinner",
-            image: "https://www.kitchensanctuary.com/wp-content/uploads/2019/09/Spaghetti-Bolognese-tall2-0205.jpg",
+            image: "https://www.kitchensanctuary.com/wp-content/uploads/2019/09/Spaghetti-Bolognese-square-FS-0204.jpg",
         },
         {
             recipeName: "Roast Chicken",
@@ -63,12 +63,12 @@ let recipes = {
         {
             recipeName: "Salmon Fillet",
             category: "Dinner",
-            image: "https://www.spendwithpennies.com/wp-content/uploads/2023/03/1200-Baked-Salmon-Fillets-SpendWithPennies.jpg",
+            image: "https://img.freepik.com/premium-photo/salmon-fresh-raw-salmon-fish-fillet-set-square-format-white-stone-table-background-top-view-flat-lay-with-copy-space-text_249006-17018.jpg",
         },
         {
             recipeName: "Vegetable Stir-Fry",
             category: "Dinner",
-            image: "https://therecipecritic.com/wp-content/uploads/2019/08/vegetable_stir_fry.jpg",
+            image: "https://www.watchwhatueat.com/wp-content/uploads/2017/06/Italian-Stir-Fry-Veggies-Square_.jpg",
         },
         {
             recipeName: "Beef Stew",
@@ -79,22 +79,22 @@ let recipes = {
             recipeName: "Chicken Caesar Salad",
             category: "Lunch",
             price: "29",
-            image: "https://www.dontgobaconmyheart.co.uk/wp-content/uploads/2023/01/caesar-salad-crispy-chicken-1080x1256.jpg",
+            image: "https://www.alphafoodie.com/wp-content/uploads/2023/08/Chicken-caesar-salad-square.jpeg",
         },
         {
             recipeName: "Caprese Sandwich",
             category: "Lunch",
-            image: "https://ohsweetbasil.com/wp-content/uploads/balsamic-glaze-grilled-caprese-sandwich-recipe-8-1024x1536.jpg",
+            image: "https://saltandbaker.com/wp-content/uploads/2022/02/chicken-caprese-sandwich-square.jpg",
         },
         {
             recipeName: "Quinoa Salad",
             category: "Lunch",
-            image: "https://cdn.loveandlemons.com/wp-content/uploads/2020/08/quinoa-salad-recipes-779x1024.jpg",
+            image: "../image/cold-quinoa-salad-2.jpg",
         },
         {
             recipeName: "Sushi Rolls",
             category: "Lunch",
-            image: "https://www.justonecookbook.com/wp-content/uploads/2020/06/Dragon-Roll-0293-II.jpg",
+            image: "https://saltandbaker.com/wp-content/uploads/2022/02/chicken-caprese-sandwich-square.jpg",
         },
         {
             recipeName: "Mushroom Risotto",
@@ -269,7 +269,7 @@ for (let i of recipes.data) {
         // Check if recipeName is "Pancakes"
         if (i.recipeName.toLowerCase() === "pancakes") {
             // If "Pancakes" is clicked, redirect to edit-recipe.html
-            window.location.href = "pancake-dup.html";
+            window.location.href = "pancake.html";
         }
     });
     imgContainer.appendChild(image);
@@ -298,11 +298,12 @@ function filterProduct(value) {
     // update the text in the span with the selected value
     document.querySelector("#dropdown .select .selected").innerText = value;
 
+    // select all cards
     let all = document.querySelector(".ALL");
     let elements = document.querySelectorAll(".card");
     // loop through all cards
     elements.forEach((element) => {
-        // display all cards on 'all' button click
+
         if (value == "Browse by") {
             element.classList.remove("hide");
             all.style.display = "none";
@@ -312,6 +313,7 @@ function filterProduct(value) {
                 // display element based on category
                 element.classList.remove("hide");
                 all.style.display = "block";
+
             } else {
                 // hide other elements
                 element.classList.add("hide");
@@ -340,23 +342,27 @@ function performSearch() {
     // If search input is empty, revert to "Browse By"
     if (searchInput === "") {
         dropdown.innerText = "Browse By";
-        cards.forEach(card => card.classList.remove("hide")); 
-        notFoundMessage.style.display = "none";
-        return; 
+        cards.forEach(card => card.classList.remove("hide")); // Show all cards
+        notFoundMessage.style.display = "none"; // Hide the "Not found" message
+        return; // Exit the function
     }
-    let found = false; 
+
+    let found = false; // Flag to check if any result is found
+
     // loop through all elements
     elements.forEach((element, index) => {
         // check if text includes the search value
         if (element.innerText.toUpperCase().includes(searchInput)) {
             // display matching card
             cards[index].classList.remove("hide");
-            found = true;
+            found = true; // Set the flag to true if result found
         } else {
             // hide others
             cards[index].classList.add("hide");
         }
     });
+
+    // If no result found, display the "Not found" message
     if (!found) {
         notFoundMessage.style.display = "block";
         footer.style.position = "absolute";
@@ -366,6 +372,7 @@ function performSearch() {
         footer.style.position = "static";
     }
 }
+
 
 
 
@@ -406,4 +413,5 @@ dropdowns.forEach(dropdown => {
 });
 
 
-//tambahan
+
+
