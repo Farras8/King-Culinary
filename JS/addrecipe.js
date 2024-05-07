@@ -104,41 +104,110 @@ function addCookingStep(button) {
     container.insertBefore(removeButton, button);
 }
 
-    function confirmSaveRecipe() {
-        // Check if all required fields are filled
-        if (checkRequiredFields()) {
-            // If all required fields are filled, prompt confirmation dialog
-            if (confirm("Are you sure you want to save your recipe for your own?")) {
-                // Redirect to index.html on confirmation
-                window.location.href = "../page-after-login/Home.html";
+    function showConfirmationAndSuccessAlert() {
+        Swal.fire({
+            title: 'Are you sure you want to save your recipe?',
+            text: 'Once saved, you won\'t be able to modify it.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, save it!',
+            cancelButtonText: 'No, cancel!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                showSuccessAlert();
             }
-        } else {
-            // Display an alert if any required field is empty
-            alert("Please fill in all required fields.");
-        }
+        });
+    }
+    
+    // Function to show the success message
+    function showSuccessAlert() {
+        Swal.fire({
+            icon: 'success',
+            title: 'Successfully Registered!',
+            text: 'You can now log in.',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'addRecipe.html';
+            }
+        });
     }
 
-    function confirmShareRecipe() {
-        // Check if all required fields are filled
-        if (checkRequiredFields()) {
-            // If all required fields are filled, prompt confirmation dialog
-            if (confirm("Are you sure you want to share your recipe to the public?")) {
-                // Redirect to index.html on confirmation
-                window.location.href = "../page-after-login/Home.html";
+    $(document).ready(function () {
+        $('#save').click(function (event) {
+            event.preventDefault(); // Prevent the default action of the submit button
+    
+            // Retrieve input values
+            var photo = $('#photo').val().trim();
+            var recipe_name = $('#recipe_name').val().trim();
+            var recipe_desc = $('#recipe_desc').val().trim();
+            var category = $('#category').val().trim();
+            var ingredient = $('#ingredient').val().trim();
+            var cook_step = $('#cook_step').val().trim();
+    
+            // Validate inputs
+            var isPhotoValid = photo.length > 0;
+            var isrecipe_nameValid = recipe_name.length > 0;
+            var isrecipe_descValid = recipe_desc.length > 0;
+            var iscategoryValid = category.length > 0;
+            var isingredientValid = ingredient.length > 0;
+            var iscook_stepValid = cook_step.length > 0;
+            
+            // Check if all inputs are valid
+            if (isPhotoValid && isrecipe_nameValid && isrecipe_descValid && isingredientValid && iscategoryValid && iscook_stepValid) {
+                showConfirmationAndSuccessAlert();
+                
+                // Reset error messages
+                $('#photo-error, #recipe_name-error, #recipe_desc-error, #category-error, #ingredients-error, #cook_step-error').text('');
+            } else {
+                // Show error messages for invalid inputs
+                $('#photo-error').text(isPhotoValid ? '' : '*Photo cannot be empty.');
+                $('#recipe_name-error').text(isrecipe_nameValid ? '' : '*Recipe Name cannot be empty.');
+                $('#recipe_desc-error').text(isrecipe_descValid ? '' : '*Description cannot be empty.');
+                $('#category-error').text(iscategoryValid ? '' : '*Category cannot be empty.');
+                $('#ingredients-error').text(isingredientValid ? '' : '*Ingredient cannot be empty.');
+                $('#cook_step-error').text(iscook_stepValid ? '' : '*Cooking Step cannot be empty.');
             }
-        } else {
-            // Display an alert if any required field is empty
-            alert("Please fill in all required fields.");
-        }
-    }
-
-    // Function to check if all required fields are filled
-    function checkRequiredFields() {
-        var requiredFields = document.querySelectorAll('input[required], textarea[required], select[required]');
-        for (var i = 0; i < requiredFields.length; i++) {
-            if (!requiredFields[i].value.trim()) {
-                return false; // Return false if any required field is empty
+        });
+    });
+    
+    $(document).ready(function () {
+        $('#share').click(function (event) {
+            event.preventDefault(); // Prevent the default action of the submit button
+    
+            // Retrieve input values
+            var photo = $('#photo').val().trim();
+            var recipe_name = $('#recipe_name').val().trim();
+            var recipe_desc = $('#recipe_desc').val().trim();
+            var category = $('#category').val().trim();
+            var ingredient = $('#ingredient').val().trim();
+            var cook_step = $('#cook_step').val().trim();
+    
+            // Validate inputs
+            var isPhotoValid = photo.length > 0;
+            var isrecipe_nameValid = recipe_name.length > 0;
+            var isrecipe_descValid = recipe_desc.length > 0;
+            var iscategoryValid = category.length > 0;
+            var isingredientValid = ingredient.length > 0;
+            var iscook_stepValid = cook_step.length > 0;
+            
+            // Check if all inputs are valid
+            if (isPhotoValid && isrecipe_nameValid && isrecipe_descValid && isingredientValid && iscategoryValid && iscook_stepValid) {
+                showConfirmationAndSuccessAlert();
+                
+                // Reset error messages
+                $('#photo-error, #recipe_name-error, #recipe_desc-error, #category-error, #ingredients-error, #cook_step-error').text('');
+            } else {
+                // Show error messages for invalid inputs
+                $('#photo-error').text(isPhotoValid ? '' : '*Photo cannot be empty.');
+                $('#recipe_name-error').text(isrecipe_nameValid ? '' : '*Recipe Name cannot be empty.');
+                $('#recipe_desc-error').text(isrecipe_descValid ? '' : '*Description cannot be empty.');
+                $('#category-error').text(iscategoryValid ? '' : '*Category cannot be empty.');
+                $('#ingredients-error').text(isingredientValid ? '' : '*Ingredient cannot be empty.');
+                $('#cook_step-error').text(iscook_stepValid ? '' : '*Cooking Step cannot be empty.');
             }
-        }
-        return true; // Return true if all required fields are filled
-    }x
+        });
+    });
+    

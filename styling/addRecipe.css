@@ -110,7 +110,13 @@ body {
     color: #797355;
     margin-bottom: 1em;
 }
-
+.error-message {
+  color: red;
+  font-size: small;
+}
+.form-box{
+  margin-bottom: 1em;
+}
 form {
     background-color: white;
     padding: 20px;

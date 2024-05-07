@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap"
         rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="../styling/addRecipe.css">
 </head>
@@ -38,39 +39,53 @@
     <div class="add-wrap">
         <h2>Add Your Own Recipe</h2>
         <form action="../page-after-login/Home.html" enctype="multipart/form-data">
-            <label for="photo">Photo:</label><br>
-            <input type="file" id="photo" name="photo" accept="image/jpeg, image/webp, image/jpg, image/png" required>
-            <div id="photo-preview" style="margin-top: 10px;"></div>
-
-            <label for="recipe_name">Recipe Name:</label><br>
-            <input type="text" id="recipe_name" name="recipe_name" placeholder="Enter Food's Name" required><br><br>
-
-            <label for="recipe_name">Recipe Description:</label><br>
-            <textarea id="recipe_name" name="recipe_name" placeholder="Enter Food's Description"
-                required></textarea><br>
-
-            <label for="category">Category:</label><br>
-            <select id="category" name="category" required>
-                <option value="">Select Category</option>
-                <option value="breakfast">Breakfast</option>
-                <option value="lunch">Lunch</option>
-                <option value="dinner">Dinner</option>
-                <option value="dessert">Dessert</option>
-                <option value="snack">Snack</option>
-            </select><br><br>
-
-            <label for="ingredients">Ingredients:</label><br>
-            <div id="ingredients_container">
-                <input type="text" name="ingredient[]" placeholder="Add Ingredient" required>
-                <button type="button" onclick="addIngredient(this)">Add Ingredient</button>
-            </div><br><br>
-
-            <label for="cooking_steps">Cooking Steps:</label><br>
-            <div id="cooking_steps_container">
-                <textarea name="cooking_step[]" rows="4" cols="50" placeholder="Add Cooking Step" required></textarea>
-                <button type="button" onclick="addCookingStep(this)">Add Cooking Step</button>
-            </div><br><br>
-
+            <div class="form-box">
+                <label for="photo">Photo:</label><br>
+                <input type="file" id="photo" name="photo" accept="image/jpeg, image/webp, image/jpg, image/png"
+                    required>
+                <div id="photo-preview" style="margin-top: 10px;"></div>
+                <span id="photo-error" class="error-message"></span>
+            </div>
+            <div class="form-box">
+                <label for="recipe_name">Recipe Name:</label><br>
+                <input type="text" id="recipe_name" name="recipe_name" placeholder="Enter Food's Name" required>
+                <span id="recipe_name-error" class="error-message"></span>
+            </div>
+            <div class="form-box">
+                <label for="recipe_name">Recipe Description:</label><br>
+                <textarea id="recipe_desc" name="recipe_name" placeholder="Enter Food's Description"
+                    required></textarea>
+                <span id="recipe_desc-error" class="error-message"></span>
+            </div>
+            <div class="form-box">
+                <label for="category">Category:</label><br>
+                <select id="category" name="category" required>
+                    <option value="">Select Category</option>
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="dessert">Dessert</option>
+                    <option value="snack">Snack</option>
+                </select>
+                <span id="category-error" class="error-message"></span>
+            </div>
+            <div class="form-box">
+                <label for="ingredients">Ingredients:</label><br>
+                <div id="ingredients_container">
+                    <input type="text" name="ingredient[]" placeholder="Add Ingredient" id="ingredient" required>
+                    <button type="button" onclick="addIngredient(this)">Add Ingredient</button>
+                </div>
+                <span id="ingredients-error" class="error-message"></span>
+            </div>
+            <div class="form-box">
+                <label for="cooking_steps">Cooking Steps:</label><br>
+                <div id="cooking_steps_container">
+                    <textarea name="cooking_step[]" rows="4" cols="50" placeholder="Add Cooking Step" id="cook_step"
+                        required></textarea>
+                    <button type="button" onclick="addCookingStep(this)">Add Cooking Step</button>
+                </div>
+                <span id="cook_step-error" class="error-message"></span>
+            </div>
             <div class="button-container">
                 <button onclick="confirmSaveRecipe()" id="save">Save</a>
                     <button onclick="confirmShareRecipe()" id="share">Share</a>
@@ -83,6 +98,7 @@
     <script>
         feather.replace()
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../JS/addrecipe.js"></script>
     <script src="../JS/script.js"></script>
 </body>
