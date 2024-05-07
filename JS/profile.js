@@ -34,30 +34,25 @@ let recipes = {
 };
 
 for (let i of recipes.data) {
-    // Create Card
     let card = document.createElement("div");
-    // Card should have category and should stay hidden initially
     card.classList.add("card", i.category, "hide");
-    // image div
+
     let imgContainer = document.createElement("div");
     imgContainer.classList.add("image-container");
-    // img tag
+
     let image = document.createElement("img");
     image.setAttribute("src", i.image);
-    // Add event listener to the image
     image.addEventListener("click", function () {
-        // Check if recipeName is "Pancakes"
         if (i.recipeName.toLowerCase() === "pancakes") {
-            // If "Pancakes" is clicked, redirect to edit-recipe.html
             window.location.href = "edit-recipe.html";
         }
     });
     imgContainer.appendChild(image);
     card.appendChild(imgContainer);
-    // container
+
     let container = document.createElement("div");
     container.classList.add("container");
-    // recipe
+
     let name = document.createElement("h5");
     name.classList.add("recipe-name");
     name.innerText = i.recipeName.toUpperCase();
@@ -68,21 +63,16 @@ for (let i of recipes.data) {
 }
 
 function filterProduct(value) {
-    // select all cards
     let elements = document.querySelectorAll(".card");
 
-    // loop through all cards
     elements.forEach((element) => {
-        // Check if element contains category class
         if (value === "MyRecipe") {
-            // display MyRecipe elements
             if (element.classList.contains(value)) {
                 element.classList.remove("hide");
             } else {
                 element.classList.add("hide");
             }
         } else if (value === "LikedRecipe") {
-            // display LikedRecipe elements
             if (element.classList.contains(value)) {
                 element.classList.remove("hide");
             } else {
@@ -91,7 +81,6 @@ function filterProduct(value) {
         }
     });
 
-    // Set the text in the profile-judul element
     let profileJudul = document.querySelector(".profile-judul");
     if (value === "MyRecipe") {
         profileJudul.textContent = "My Recipe";
@@ -100,9 +89,8 @@ function filterProduct(value) {
     }
 }
 
-
 window.onload = () => {
-    filterProduct("MyRecipe"); // Set the default filter to "MyRecipe" on page load
+    filterProduct("MyRecipe");
 };
 
 function confirmDeleteAccount() {
@@ -117,7 +105,6 @@ function confirmDeleteAccount() {
         cancelButtonText: 'Cancel'
     }).then((result) => {
         if (result.isConfirmed) {
-            // Redirect to index.html on confirmation
             window.location.href = "../index.html";
         }
     });
@@ -135,36 +122,28 @@ function confirmLogOutAccount() {
         cancelButtonText: 'Cancel'
     }).then((result) => {
         if (result.isConfirmed) {
-            // Redirect to index.html on confirmation
             window.location.href = "../index.html";
         }
     });
 }
 
-
-//profile photo
 document.getElementById('profile_photo').onchange = function (evt) {
     var files = evt.target.files;
 
-    // Check if a file is selected
     if (FileReader && files && files.length) {
         var fr = new FileReader();
         fr.onload = function () {
-            // Create a new image element to display the preview
             var img = new Image();
 
-            // Set the maximum width and height for the preview image
-            var maxWidth = 500; // maximum width
-            var maxHeight = 500; // maximum height
+            var maxWidth = 500;
+            var maxHeight = 500;
 
             img.onload = function () {
                 var width = img.width;
                 var height = img.height;
 
-                // Calculate the aspect ratio
                 var aspectRatio = width / height;
 
-                // Determine the resizing factor based on the maximum dimensions
                 if (width > maxWidth || height > maxHeight) {
                     if (width / maxWidth > height / maxHeight) {
                         width = maxWidth;
@@ -175,11 +154,9 @@ document.getElementById('profile_photo').onchange = function (evt) {
                     }
                 }
 
-                // Set the dimensions of the preview image
                 img.width = width;
                 img.height = height;
 
-                // Get or create the preview container element
                 var previewContainer = document.getElementById('photo-preview');
                 if (!previewContainer) {
                     previewContainer = document.createElement('div');
@@ -187,10 +164,8 @@ document.getElementById('profile_photo').onchange = function (evt) {
                     document.querySelector('form').appendChild(previewContainer);
                 }
 
-                // Clear any existing preview content
                 previewContainer.innerHTML = "";
 
-                // Append the image element to the preview container
                 previewContainer.appendChild(img);
             };
 
@@ -198,7 +173,6 @@ document.getElementById('profile_photo').onchange = function (evt) {
         }
         fr.readAsDataURL(files[0]);
     } else {
-        // Clear the preview if no file is selected
         var previewContainer = document.getElementById('photo-preview');
         if (previewContainer) {
             previewContainer.innerHTML = "";
@@ -209,55 +183,78 @@ document.getElementById('profile_photo').onchange = function (evt) {
 feather.replace();
 
 $(document).ready(function () {
-    $('.update-button').click(function (event) {
-        event.preventDefault(); // Menghentikan tindakan default dari tombol submit
+    function validateInput(inputId, errorId, errorMessage, isValid) {
+        if (!isValid) {
+            $(errorId).text(errorMessage);
+        } else {
+            $(errorId).text('');
+        }
+    }
 
-        // Mendapatkan nilai email, password, dan username
+    $('#username').on('input', function () {
+        var username = $(this).val().trim();
+        var isUsernameValid = username.length > 0;
+        validateInput('#username', '#name-error', '*Username cannot be empty.', isUsernameValid);
+    });
+
+    $('#pass').on('input', function () {
+        var password = $(this).val().trim();
+        var isValidPassword = password.length >= 7 && /[^\w\s]/.test(password);
+        validateInput('#pass', '#password-error', '*Password must be at least 7 characters long and contain at least one symbol.', isValidPassword);
+    });
+
+    $('#email').on('input', function () {
+        var email = $(this).val().trim();
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var isValidEmail = emailPattern.test(email);
+        validateInput('#email', '#email-error', '*Please enter a valid email address.', isValidEmail);
+    });
+
+    $('#pass-repeat').on('input', function () {
+        var repeatPass = $(this).val().trim();
+        var password = $('#pass').val().trim();
+        var isRepeatPassValid = repeatPass === password;
+        validateInput('#pass-repeat', '#repeat-password-error', '*Password not match.', isRepeatPassValid);
+    });
+
+    $('.update-button').click(function (event) {
+        event.preventDefault();
+
         var username = $('#username').val().trim();
         var password = $('#pass').val().trim();
         var email = $('#email').val().trim();
         var repeatPass = $('#pass-repeat').val().trim();
 
-        // Validasi email menggunakan regular expression
         var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         var isValidEmail = emailPattern.test(email);
 
-        // Validasi password
         var isValidPassword = password.length >= 7 && /[^\w\s]/.test(password);
 
-        // Validasi username
         var isUsernameValid = username.length > 0;
 
-        var isRepeatPassValid = repeatPass == password;
+        var isRepeatPassValid = repeatPass === password;
 
-        // Memeriksa apakah email, password, dan username telah diisi dengan benar
-        if (isValidEmail && isValidPassword && isUsernameValid) {
-            // Jika sudah terisi dan valid, arahkan pengguna ke halaman index.html
+        if (isValidEmail && isValidPassword && isUsernameValid && isRepeatPassValid) {
             window.location.href = 'profile.html';
         } else {
-            // Jika tidak, tampilkan pesan kesalahan di bawah input field
-            if (!isValidEmail) {
-                $('#email-error').text('*Please enter a valid email address.');
-            } else {
-                $('#email-error').text(''); // Menghapus pesan error jika email valid
-            }
-            if (!isValidPassword) {
-                $('#password-error').text('*Password must be at least 7 characters long and contain at least one symbol.');
-            } else {
-                $('#password-error').text(''); // Menghapus pesan error jika password valid
-            }
-            if (!isUsernameValid) {
-                $('#name-error').text('*Username cannot be empty.');
-            } else {
-                $('#name-error').text(''); // Menghapus pesan error jika username valid
-            }
-            if (!isRepeatPassValid) {
-                $('#repeat-password-error').text('*Password not match.');
-            } else {
-                $('#repeat-password-error').text(''); // Menghapus pesan error jika username valid
-            }
+            validateInput('#username', '#name-error', '*Username cannot be empty.', isUsernameValid);
+            validateInput('#pass', '#password-error', '*Password must be at least 7 characters long and contain at least one symbol.', isValidPassword);
+            validateInput('#email', '#email-error', '*Please enter a valid email address.', isValidEmail);
+            validateInput('#pass-repeat', '#repeat-password-error', '*Password not match.', isRepeatPassValid);
         }
     });
+
+    $('#exampleModal').on('hidden.bs.modal', function () {
+        $('#name-error').text('');
+        $('#password-error').text('');
+        $('#email-error').text('');
+        $('#repeat-password-error').text('');
+        $('#username').val('');
+        $('#pass').val('');
+        $('#email').val('');
+        $('#pass-repeat').val('');
+    });
 });
+
 
 

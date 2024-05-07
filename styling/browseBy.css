@@ -95,6 +95,21 @@ nav .Navbar a.active {
   padding: 10px;
   cursor: pointer;
 }
+.ALL{
+  display: none;
+  font-size: large;
+  font-weight: bold;
+  color: #797355;
+}
+.ALL a{
+  text-decoration: none;
+  color: #797355;
+}
+
+.ALL a:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
 .browse-wrap{
   margin-left: 3em;
   margin-right: 3em;

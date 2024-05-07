@@ -1,4 +1,25 @@
 $(document).ready(function () {
+    function validateInput(InputId, errorId, errorMessage, isValid) {
+        if (!isValid) {
+            $(errorId).text(errorMessage);
+        } else {
+            $(errorId).text('');
+        }
+    }
+
+
+    $('#login-pass').on('input', function () {
+        var password = $(this).val().trim();
+        var isValidPassword = /[^\w\s]/.test(password);
+        validateInput('#login-pass', '#password-error', '*Contain at least one symbol.', isValidPassword);
+    });
+
+    $('#login-email').on('input', function () {
+        var email = $(this).val().trim();
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var isValidEmail = emailPattern.test(email);
+        validateInput('#login-email', '#email-error', '*Please enter a valid email address.', isValidEmail);
+    });
     $('.login-button').click(function (event) {
         event.preventDefault(); // Menghentikan tindakan default dari tombol submit
 
@@ -11,7 +32,7 @@ $(document).ready(function () {
         var isValidEmail = emailPattern.test(email);
 
         // Validasi password
-        var isValidPassword = password.length >= 7 && /[^\w\s]/.test(password);
+        var isValidPassword = /[^\w\s]/.test(password);
 
         // Memeriksa apakah email dan password telah diisi dengan benar
         if (isValidEmail && isValidPassword) {
@@ -19,16 +40,8 @@ $(document).ready(function () {
             window.location.href = 'page-after-login/Home.html';
         } else {
             // Jika tidak, tampilkan pesan kesalahan di bawah input field
-            if (!isValidEmail) {
-                $('#email-error').text('*Please enter a valid email address.');
-            } else {
-                $('#email-error').text(''); // Menghapus pesan error jika email valid
-            }
-            if (!isValidPassword) {
-                $('#password-error').text('*Password must be at least 7 characters long and contain at least one symbol.');
-            } else {
-                $('#password-error').text(''); // Menghapus pesan error jika password valid
-            }
+            validateInput('#login-pass', '#password-error', '*Contain at least one symbol.', isValidPassword);
+            validateInput('#login-email', '#email-error', '*Please enter a valid email address.', isValidEmail);
         }
     });
 });
@@ -36,21 +49,55 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
+    function validateInput(InputId, errorId, errorMessage, isValid) {
+        if (!isValid) {
+            $(errorId).text(errorMessage);
+        } else {
+            $(errorId).text('');
+        }
+    }
+
+
+    $('#login-pass').on('input', function () {
+        var password = $(this).val().trim();
+        var isValidPassword = /[^\w\s]/.test(password);
+        validateInput('#login-pass', '#password-error', '*Contain at least one symbol.', isValidPassword);
+    });
+
+    $('#login-email').on('input', function () {
+        var email = $(this).val().trim();
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var isValidEmail = emailPattern.test(email);
+        validateInput('#login-email', '#email-error', '*Please enter a valid email address.', isValidEmail);
+    });
+    $('#login-pass-repeat').on('input', function () {
+        var repeatPass = $(this).val().trim();
+        var password = $('#pass').val().trim();
+        var isRepeatPassValid = repeatPass === password;
+        validateInput('#login-pass-repeat', '#repeat-password-error', '*Password not match.', isRepeatPassValid);
+    });
+    $('#login-username').on('input', function () {
+        var username = $(this).val().trim();
+        var isUsernameValid = username.length > 0;
+        validateInput('#login-username', '#name-error', '*Username cannot be empty.', isUsernameValid);
+    });
     $('.register-button').click(function (event) {
-        event.preventDefault(); 
+        event.preventDefault(); // Menghentikan tindakan default dari tombol submit
 
-
+        // Mendapatkan nilai email, password, dan username
         var email = $('#login-email').val().trim();
         var password = $('#login-pass').val().trim();
         var username = $('#login-username').val().trim();
         var repeatPass = $('#login-pass-repeat').val().trim();
 
-
+        // Validasi email menggunakan regular expression
         var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         var isValidEmail = emailPattern.test(email);
-        
-        var isValidPassword = password.length >= 7 && /[^\w\s]/.test(password);
 
+        // Validasi password
+        var isValidPassword = /[^\w\s]/.test(password);
+
+        // Validasi username
         var isUsernameValid = username.length > 0;
 
         var isRepeatPassValid = repeatPass == password;
@@ -68,26 +115,10 @@ $(document).ready(function () {
                 }
             });
         } else {
-            if (!isValidEmail) {
-                $('#email-error').text('*Please enter a valid email address.');
-            } else {
-                $('#email-error').text(''); 
-            }
-            if (!isValidPassword) {
-                $('#password-error').text('*Password must be at least 7 characters long and contain at least one symbol.');
-            } else {
-                $('#password-error').text(''); 
-            }
-            if (!isUsernameValid) {
-                $('#name-error').text('*Username cannot be empty.');
-            } else {
-                $('#name-error').text(''); 
-            }
-            if (!isRepeatPassValid) {
-                $('#repeat-password-error').text('*Password not match.');
-            } else {
-                $('#repeat-password-error').text(''); 
-            }
+            validateInput('#login-username', '#name-error', '*Username cannot be empty.', isUsernameValid);
+            validateInput('#login-pass', '#password-error', '*Ccontain at least one symbol.', isValidPassword);
+            validateInput('#login-email', '#email-error', '*Please enter a valid email address.', isValidEmail);
+            validateInput('#login-pass-repeat', '#repeat-password-error', '*Password not match.', isRepeatPassValid);
         }
     });
 });
@@ -120,16 +151,16 @@ let dots = document.querySelectorAll('.slider .dots li');
 
 let lengthItems = items.length - 1;
 let active = 0;
-next.onclick = function(){
+next.onclick = function () {
     active = active + 1 <= lengthItems ? active + 1 : 0;
     reloadSlider();
 }
-prev.onclick = function(){
+prev.onclick = function () {
     active = active - 1 >= 0 ? active - 1 : lengthItems;
     reloadSlider();
 }
-let refreshInterval = setInterval(()=> {next.click()}, 5000);
-function reloadSlider(){
+let refreshInterval = setInterval(() => { next.click() }, 5000);
+function reloadSlider() {
     slider.style.left = -items[active].offsetLeft + 'px';
     // 
     let last_active_dot = document.querySelector('.slider .dots li.active');
@@ -137,18 +168,18 @@ function reloadSlider(){
     dots[active].classList.add('active');
 
     clearInterval(refreshInterval);
-    refreshInterval = setInterval(()=> {next.click()}, 5000);
+    refreshInterval = setInterval(() => { next.click() }, 5000);
 
-    
+
 }
 
 dots.forEach((li, key) => {
-    li.addEventListener('click', ()=>{
-         active = key;
-         reloadSlider();
+    li.addEventListener('click', () => {
+        active = key;
+        reloadSlider();
     })
 })
-window.onresize = function(event) {
+window.onresize = function (event) {
     reloadSlider();
 };
 

@@ -299,17 +299,21 @@ function filterProduct(value) {
     document.querySelector("#dropdown .select .selected").innerText = value;
 
     // select all cards
+    let all = document.querySelector(".ALL");
     let elements = document.querySelectorAll(".card");
     // loop through all cards
     elements.forEach((element) => {
 
         if (value == "Browse by") {
             element.classList.remove("hide");
+            all.style.display = "none";
         } else {
             // Check if element contains category class
             if (element.classList.contains(value)) {
                 // display element based on category
                 element.classList.remove("hide");
+                all.style.display = "block";
+
             } else {
                 // hide other elements
                 element.classList.add("hide");
