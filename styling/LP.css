@@ -298,6 +298,24 @@ nav .Navbar a.active {
   width: 200px;
   height: 150px;
 }
+.up-recipe-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #12bda6;
+  padding: 10px;
+  border-radius: 20px;
+  color: white;
+  text-decoration: none;
+  font-size: large;
+  font-weight: 600;
+  width: 100%;
+}
+
+.up-recipe-btn:hover {
+  background-color: #149180;
+  cursor: pointer;
+}
 
 #up-recipe-btn {
   text-align: center;
