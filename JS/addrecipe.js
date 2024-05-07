@@ -104,6 +104,34 @@ function addCookingStep(button) {
     container.insertBefore(removeButton, button);
 }
 
+    function showConfirmationAndSuccessShareAlert() {
+        Swal.fire({
+            title: 'Are you sure you want to share your recipe?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, share it!',
+            cancelButtonText: 'No, cancel!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                showSuccessAlert();
+            }
+        });
+    }
+
+    function showSuccessAlertShare() {
+        Swal.fire({
+            icon: 'success',
+            title: 'Successfully Shared!',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'addRecipe.html';
+            }
+        });
+    }
+
     function showConfirmationAndSuccessAlert() {
         Swal.fire({
             title: 'Are you sure you want to save your recipe?',
@@ -116,17 +144,15 @@ function addCookingStep(button) {
             cancelButtonText: 'No, cancel!'
         }).then((result) => {
             if (result.isConfirmed) {
-                showSuccessAlert();
+                showSuccessAlertShare();
             }
         });
     }
-    
-    // Function to show the success message
+
     function showSuccessAlert() {
         Swal.fire({
             icon: 'success',
-            title: 'Successfully Registered!',
-            text: 'You can now log in.',
+            title: 'Successfully Shared!',
             confirmButtonText: 'OK'
         }).then((result) => {
             if (result.isConfirmed) {
@@ -134,6 +160,44 @@ function addCookingStep(button) {
             }
         });
     }
+
+    function validateInput(InputId, errorId, errorMessage, isValid) {
+        if (!isValid) {
+            $(errorId).text(errorMessage);
+        } else {
+            $(errorId).text('');
+        }
+    }
+    $('#photo').on('input', function () {
+        var photo = $(this).val().trim();
+        var isPhotoValid = photo.length > 0;
+        validateInput('#photo', '#photo-error', '*Photo cannot be empty.', isPhotoValid);
+    });
+    $('#recipe_name').on('input', function () {
+        var recipe_name = $(this).val().trim();
+        var isrecipe_nameValid = recipe_name.length > 0;
+        validateInput('#recipe_name', '#recipe_name-error', '*Recipe name cannot be empty.', isrecipe_nameValid);
+    });
+    $('#recipe_desc').on('input', function () {
+        var recipe_desc = $(this).val().trim();
+        var isrecipe_descValid = recipe_desc.length > 0;
+        validateInput('#recipe_desc', '#recipe_desc-error', '*Description cannot be empty.', isrecipe_descValid);
+    });
+    $('#category').on('input', function () {
+        var category = $(this).val().trim();
+        var iscategoryValid = category.length > 0;
+        validateInput('#category', '#category-error', '*Category cannot be empty.', iscategoryValid);
+    });
+    $('#ingredient').on('input', function () {
+        var ingredient = $(this).val().trim();
+        var isingredientValid = ingredient.length > 0;
+        validateInput('#ingredient', '#ingredients-error', '*Ingredient cannot be empty.', isingredientValid);
+    });
+    $('#cook_step').on('input', function () {
+        var cook_step = $(this).val().trim();
+        var iscook_stepValid = cook_step.length > 0;
+        validateInput('#cook_step', '#cook_step-error', '*Cook step cannot be empty.', iscook_stepValid);
+    });
 
     $(document).ready(function () {
         $('#save').click(function (event) {
@@ -195,7 +259,7 @@ function addCookingStep(button) {
             
             // Check if all inputs are valid
             if (isPhotoValid && isrecipe_nameValid && isrecipe_descValid && isingredientValid && iscategoryValid && iscook_stepValid) {
-                showConfirmationAndSuccessAlert();
+                showConfirmationAndSuccessShareAlert();
                 
                 // Reset error messages
                 $('#photo-error, #recipe_name-error, #recipe_desc-error, #category-error, #ingredients-error, #cook_step-error').text('');

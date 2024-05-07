@@ -1,25 +1,37 @@
-$(document).ready(function () {
-    function validateInput(InputId, errorId, errorMessage, isValid) {
-        if (!isValid) {
-            $(errorId).text(errorMessage);
-        } else {
-            $(errorId).text('');
-        }
+function validateInput(InputId, errorId, errorMessage, isValid) {
+    if (!isValid) {
+        $(errorId).text(errorMessage);
+    } else {
+        $(errorId).text('');
     }
+}
 
 
-    $('#login-pass').on('input', function () {
-        var password = $(this).val().trim();
-        var isValidPassword = /[^\w\s]/.test(password);
-        validateInput('#login-pass', '#password-error', '*Contain at least one symbol.', isValidPassword);
-    });
+$('#login-pass').on('input', function () {
+    var password = $(this).val().trim();
+    var isValidPassword = /[^\w\s]/.test(password);
+    validateInput('#login-pass', '#password-error', '*Contain at least one symbol.', isValidPassword);
+});
 
-    $('#login-email').on('input', function () {
-        var email = $(this).val().trim();
-        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        var isValidEmail = emailPattern.test(email);
-        validateInput('#login-email', '#email-error', '*Please enter a valid email address.', isValidEmail);
-    });
+$('#login-email').on('input', function () {
+    var email = $(this).val().trim();
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var isValidEmail = emailPattern.test(email);
+    validateInput('#login-email', '#email-error', '*Please enter a valid email address.', isValidEmail);
+});
+$('#login-pass-repeat').on('input', function () {
+    var repeatPass = $(this).val().trim();
+    var password = $('#pass').val().trim();
+    var isRepeatPassValid = repeatPass === password;
+    validateInput('#login-pass-repeat', '#repeat-password-error', '*Password not match.', isRepeatPassValid);
+});
+$('#login-username').on('input', function () {
+    var username = $(this).val().trim();
+    var isUsernameValid = username.length > 0;
+    validateInput('#login-username', '#name-error', '*Username cannot be empty.', isUsernameValid);
+});
+
+$(document).ready(function () {
     $('.login-button').click(function (event) {
         event.preventDefault(); // Menghentikan tindakan default dari tombol submit
 
@@ -47,40 +59,7 @@ $(document).ready(function () {
 });
 
 
-
 $(document).ready(function () {
-    function validateInput(InputId, errorId, errorMessage, isValid) {
-        if (!isValid) {
-            $(errorId).text(errorMessage);
-        } else {
-            $(errorId).text('');
-        }
-    }
-
-
-    $('#login-pass').on('input', function () {
-        var password = $(this).val().trim();
-        var isValidPassword = /[^\w\s]/.test(password);
-        validateInput('#login-pass', '#password-error', '*Contain at least one symbol.', isValidPassword);
-    });
-
-    $('#login-email').on('input', function () {
-        var email = $(this).val().trim();
-        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        var isValidEmail = emailPattern.test(email);
-        validateInput('#login-email', '#email-error', '*Please enter a valid email address.', isValidEmail);
-    });
-    $('#login-pass-repeat').on('input', function () {
-        var repeatPass = $(this).val().trim();
-        var password = $('#pass').val().trim();
-        var isRepeatPassValid = repeatPass === password;
-        validateInput('#login-pass-repeat', '#repeat-password-error', '*Password not match.', isRepeatPassValid);
-    });
-    $('#login-username').on('input', function () {
-        var username = $(this).val().trim();
-        var isUsernameValid = username.length > 0;
-        validateInput('#login-username', '#name-error', '*Username cannot be empty.', isUsernameValid);
-    });
     $('.register-button').click(function (event) {
         event.preventDefault(); // Menghentikan tindakan default dari tombol submit
 
