@@ -44,6 +44,14 @@ for (let i of recipes.data) {
     // img tag
     let image = document.createElement("img");
     image.setAttribute("src", i.image);
+    // Add event listener to the image
+    image.addEventListener("click", function () {
+        // Check if recipeName is "Pancakes"
+        if (i.recipeName.toLowerCase() === "pancakes") {
+            // If "Pancakes" is clicked, redirect to edit-recipe.html
+            window.location.href = "edit-recipe.html";
+        }
+    });
     imgContainer.appendChild(image);
     card.appendChild(imgContainer);
     // container
@@ -98,14 +106,44 @@ window.onload = () => {
 };
 
 function confirmDeleteAccount() {
-    if (confirm("Are you sure you want to delete your account?")) {
-      // Redirect to index.html on confirmation
-      window.location.href = "../index.html";
-    }
-  }
+    Swal.fire({
+        title: 'Are you sure?',
+        text: 'You are about to delete your account!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Delete',
+        cancelButtonText: 'Cancel'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Redirect to index.html on confirmation
+            window.location.href = "../index.html";
+        }
+    });
+}
+
+function confirmLogOutAccount() {
+    Swal.fire({
+        title: 'Are you sure?',
+        text: 'You are about to log out!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Log Out',
+        cancelButtonText: 'Cancel'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Redirect to index.html on confirmation
+            window.location.href = "../index.html";
+        }
+    });
+}
+
 
 //profile photo
-  document.getElementById('profile_photo').onchange = function (evt) {
+document.getElementById('profile_photo').onchange = function (evt) {
     var files = evt.target.files;
 
     // Check if a file is selected
@@ -119,7 +157,7 @@ function confirmDeleteAccount() {
             var maxWidth = 500; // maximum width
             var maxHeight = 500; // maximum height
 
-            img.onload = function() {
+            img.onload = function () {
                 var width = img.width;
                 var height = img.height;
 
@@ -183,7 +221,7 @@ $(document).ready(function () {
         // Validasi email menggunakan regular expression
         var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         var isValidEmail = emailPattern.test(email);
-        
+
         // Validasi password
         var isValidPassword = password.length >= 7 && /[^\w\s]/.test(password);
 
@@ -223,4 +261,3 @@ $(document).ready(function () {
 });
 
 
-  

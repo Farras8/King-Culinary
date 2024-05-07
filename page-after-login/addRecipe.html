@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,45 +35,47 @@
         </div>
 
     </nav>
+    <div class="add-wrap">
+        <h2>Add Your Own Recipe</h2>
+        <form action="../page-after-login/Home.html" enctype="multipart/form-data">
+            <label for="photo">Photo:</label><br>
+            <input type="file" id="photo" name="photo" accept="image/jpeg, image/webp, image/jpg, image/png" required>
+            <div id="photo-preview" style="margin-top: 10px;"></div>
 
-    <h2>Add Your Own Recipe</h2>
-    <form action="../page-after-login/Home.html" enctype="multipart/form-data">
-        <label for="photo">Photo:</label><br>
-        <input type="file" id="photo" name="photo" accept="image/jpeg, image/webp, image/jpg, image/png" required>
-        <div id="photo-preview" style="margin-top: 10px;"></div>
+            <label for="recipe_name">Recipe Name:</label><br>
+            <input type="text" id="recipe_name" name="recipe_name" placeholder="Enter Food's Name" required><br><br>
 
-        <label for="recipe_name">Recipe Name:</label><br>
-        <input type="text" id="recipe_name" name="recipe_name" placeholder="Enter Food's Name" required><br><br>
+            <label for="recipe_name">Recipe Description:</label><br>
+            <textarea id="recipe_name" name="recipe_name" placeholder="Enter Food's Description"
+                required></textarea><br>
 
-        <label for="recipe_name">Recipe Description:</label><br>
-        <textarea id="recipe_name" name="recipe_name" placeholder="Enter Food's Description" required></textarea><br>
+            <label for="category">Category:</label><br>
+            <select id="category" name="category" required>
+                <option value="">Select Category</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="dessert">Dessert</option>
+                <option value="snack">Snack</option>
+            </select><br><br>
 
-        <label for="category">Category:</label><br>
-        <select id="category" name="category" required>
-            <option value="">Select Category</option>
-            <option value="breakfast">Breakfast</option>
-            <option value="lunch">Lunch</option>
-            <option value="dinner">Dinner</option>
-            <option value="dessert">Dessert</option>
-            <option value="snack">Snack</option>
-        </select><br><br>
+            <label for="ingredients">Ingredients:</label><br>
+            <div id="ingredients_container">
+                <input type="text" name="ingredient[]" placeholder="Add Ingredient" required>
+                <button type="button" onclick="addIngredient(this)">Add Ingredient</button>
+            </div><br><br>
 
-        <label for="ingredients">Ingredients:</label><br>
-        <div id="ingredients_container">
-            <input type="text" name="ingredient[]" placeholder="Add Ingredient" required>
-            <button type="button" onclick="addIngredient(this)">Add Ingredient</button>
-        </div><br><br>
+            <label for="cooking_steps">Cooking Steps:</label><br>
+            <div id="cooking_steps_container">
+                <textarea name="cooking_step[]" rows="4" cols="50" placeholder="Add Cooking Step" required></textarea>
+                <button type="button" onclick="addCookingStep(this)">Add Cooking Step</button>
+            </div><br><br>
 
-        <label for="cooking_steps">Cooking Steps:</label><br>
-        <div id="cooking_steps_container">
-            <textarea name="cooking_step[]" rows="4" cols="50" placeholder="Add Cooking Step" required></textarea>
-            <button type="button" onclick="addCookingStep(this)">Add Cooking Step</button>
-        </div><br><br>
-
-        <div class="button-container">
-            <button onclick="confirmSaveRecipe()" id="save">Save</a>
-            <button onclick="confirmShareRecipe()" id="share">Share</a>
-        </div>
+            <div class="button-container">
+                <button onclick="confirmSaveRecipe()" id="save">Save</a>
+                    <button onclick="confirmShareRecipe()" id="share">Share</a>
+            </div>
+    </div>
     </form>
     <footer>
         <p>&copy; 2024 King Culinary. All rights reserved.</p>
@@ -83,4 +86,5 @@
     <script src="../JS/addrecipe.js"></script>
     <script src="../JS/script.js"></script>
 </body>
+
 </html>

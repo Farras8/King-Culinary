@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>register</title> 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap"
-            rel="stylesheet">
-        <script src="https://unpkg.com/feather-icons"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <link rel="stylesheet" href="styling/login.css">
+    <title>register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="styling/login.css">
 </head>
 
 <body>
@@ -44,14 +45,15 @@
                     <div class="login-box">
                         <div class="login-box-input">
                             <i data-feather="lock"></i>
-                            <input type="password" required class="login-input" id="login-pass-repeat" placeholder="Confirm Password">
+                            <input type="password" required class="login-input" id="login-pass-repeat"
+                                placeholder="Confirm Password">
                         </div>
                         <span id="repeat-password-error" class="error-message"></span>
                     </div>
                 </div>
                 <button type="submit" class="register-button">register</button>
                 <p class="login-register">
-                    Already an account? <a href="login.html">Login</a>
+                    Already have an account? <a href="login.html">Login</a>
                 </p>
             </form>
         </div>
@@ -59,6 +61,7 @@
     <script>
         feather.replace()
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="JS/script.js"></script>
 </body>
 

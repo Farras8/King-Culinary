@@ -17,8 +17,7 @@
 </head>
 
 <body>
-    <div class="content-wrap">
-        <!-- Navbar -->
+    <!-- Navbar -->
     <nav>
         <div class="logo">
             <img src="image/King_Culinary_Logo-removebg-preview.png" class="imglogo" alt="logo">
@@ -37,7 +36,7 @@
         </div>
 
     </nav>
-
+    <div class="browse-wrap">
         <section class="search">
             <div class="search-container">
                 <input type="search" id="search-input" placeholder="search">
@@ -88,7 +87,8 @@
             <div id="recipes"></div>
         </div>
     </div>
-    <footer>
+    <div class="not-found">Not found</div>
+    <footer class="footer">
         <p>&copy; 2024 King Culinary. All rights reserved.</p>
     </footer>
     <script src="js/script.js"></script>
@@ -96,23 +96,23 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         document.getElementById('up-recipe').addEventListener('click', function (event) {
-        // Tampilkan pesan peringatan menggunakan SweetAlert
-        Swal.fire({
-            icon: 'warning',
-            title: 'You should login first to add your recipe.',
-            showCancelButton: true,
-            confirmButtonText: 'Login',
-            cancelButtonText: 'Cancel'
-        }).then((result) => {
-            // Redirect pengguna ke halaman login jika mereka mengklik tombol "Login"
-            if (result.isConfirmed) {
-                window.location.href = 'login.html';
-            }
+            // Tampilkan pesan peringatan menggunakan SweetAlert
+            Swal.fire({
+                icon: 'warning',
+                title: 'You should login first to add your recipe.',
+                showCancelButton: true,
+                confirmButtonText: 'Login',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                // Redirect pengguna ke halaman login jika mereka mengklik tombol "Login"
+                if (result.isConfirmed) {
+                    window.location.href = 'login.html';
+                }
+            });
+
+            // Menghentikan aksi default dari link
+            event.preventDefault();
         });
-    
-        // Menghentikan aksi default dari link
-        event.preventDefault();
-    });
     </script>
 </body>
 

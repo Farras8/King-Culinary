@@ -265,6 +265,13 @@ for (let i of recipes.data) {
     // img tag
     let image = document.createElement("img");
     image.setAttribute("src", i.image);
+    image.addEventListener("click", function () {
+        // Check if recipeName is "Pancakes"
+        if (i.recipeName.toLowerCase() === "pancakes") {
+            // If "Pancakes" is clicked, redirect to edit-recipe.html
+            window.location.href = "pancake.html";
+        }
+    });
     imgContainer.appendChild(image);
     card.appendChild(imgContainer);
     // container
@@ -295,7 +302,7 @@ function filterProduct(value) {
     let elements = document.querySelectorAll(".card");
     // loop through all cards
     elements.forEach((element) => {
-        // display all cards on 'all' button click
+
         if (value == "Browse by") {
             element.classList.remove("hide");
         } else {
@@ -325,13 +332,18 @@ function performSearch() {
     let elements = document.querySelectorAll(".recipe-name");
     let cards = document.querySelectorAll(".card");
     let dropdown = document.querySelector(".selected");
+    let notFoundMessage = document.querySelector(".not-found");
+    let footer = document.querySelector(".footer");
 
     // If search input is empty, revert to "Browse By"
     if (searchInput === "") {
         dropdown.innerText = "Browse By";
         cards.forEach(card => card.classList.remove("hide")); // Show all cards
+        notFoundMessage.style.display = "none"; // Hide the "Not found" message
         return; // Exit the function
     }
+
+    let found = false; // Flag to check if any result is found
 
     // loop through all elements
     elements.forEach((element, index) => {
@@ -339,12 +351,24 @@ function performSearch() {
         if (element.innerText.toUpperCase().includes(searchInput)) {
             // display matching card
             cards[index].classList.remove("hide");
+            found = true; // Set the flag to true if result found
         } else {
             // hide others
             cards[index].classList.add("hide");
         }
     });
+
+    // If no result found, display the "Not found" message
+    if (!found) {
+        notFoundMessage.style.display = "block";
+        footer.style.position = "absolute";
+        footer.style.bottom = "0";
+    } else {
+        notFoundMessage.style.display = "none"; 
+        footer.style.position = "static";
+    }
 }
+
 
 
 
@@ -385,16 +409,5 @@ dropdowns.forEach(dropdown => {
 });
 
 
-//tambahan
-$(document).ready(function () {
 
-    $(".Navbar ul li a").click(function (e) {
-        e.preventDefault();
-        var targetUrl = $(this).attr("href");
-        $("body").animate({ opacity: 0, marginTop: "100px" }, 500, function () {
-            window.location.href = targetUrl;
-        });
-    });
-    $("body").animate({ opacity: 1, marginTop: "0" }, 500);
-});
 

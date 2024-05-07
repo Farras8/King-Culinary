@@ -96,12 +96,25 @@
     cursor: pointer;
   }
   .content-wrap{
-    margin-top: 9em;
+    margin-top: 12em;
     margin-left: 4em;
     margin-right: 4em;
   }
 
-
+  .back{
+    font-size: large;
+    font-weight: bold;
+    color: #797355;
+  }
+  .back a{
+    text-decoration: none;
+    color: #797355;
+  }
+  
+  .back a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  }
 .atas-wrap{
   display: flex;
   justify-content: space-between;

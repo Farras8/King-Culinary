@@ -95,7 +95,9 @@ nav .Navbar a.active {
   padding: 10px;
   cursor: pointer;
 }
-.content-wrap{
+.browse-wrap{
+  margin-left: 3em;
+  margin-right: 3em;
   margin-top: 12em;
 }
 .search {
@@ -294,7 +296,17 @@ img:hover {
   cursor: pointer;
 }
 
-
+.not-found {
+  display: none;
+  position: fixed; 
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  background-color: rgba(255, 255, 255, 0.8); 
+  padding: 20px; 
+  border-radius: 5px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
 
 
 footer {
@@ -427,6 +439,9 @@ footer {
     height: 20px;
     background-color: rgb(190, 30, 30);
     border-radius: 50%;
+  }
+  .browse-wrap{
+    margin-top: 16em;
   }
 }
 

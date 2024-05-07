@@ -164,6 +164,7 @@ nav .Navbar a.active {
   justify-content: center;
   gap: 4em;
   flex-wrap: wrap;
+  margin-bottom: 3em;
 }
 
 .card {
@@ -312,6 +313,13 @@ footer {
   .imageAboutus img {
     width: 350px;
     height: 250px;
+  }
+  .card{
+    height: 300px;
+  }
+  .card img{
+    height: 300px;
+    width: 200px;
   }
 }
 

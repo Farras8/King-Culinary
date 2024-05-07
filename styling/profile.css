@@ -95,9 +95,22 @@ nav .Navbar a.active {
   padding: 10px;
   cursor: pointer;
 }
+.back{
+  font-size: large;
+  font-weight: bold;
+  color: #797355;
+}
+.back a{
+  text-decoration: none;
+  color: #797355;
+}
 
+.back a:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
 .profile-wrap {
-    margin-top: 9em;
+    margin-top: 14em;
     display: flex;
     flex-direction: column;
     margin-left: 3em;
@@ -208,6 +221,8 @@ nav .Navbar a.active {
     position: relative;
     text-align: center;
   }
+
+
   
   img {
     border-radius: 20px;
@@ -235,6 +250,7 @@ nav .Navbar a.active {
     display: none;
   }
   .recipe-name{
+    text-align: center;
     font-weight: bold;
     color: #797355;
   }
@@ -362,15 +378,16 @@ input[type="file"] {
 }
   
 
-  footer {
-    padding: 1em;
-    background-color: rgb(177, 169, 128);
-    margin-top: 1em;
-    text-align: center;
-    color: #333;
-    font-size: 1.25rem;
-    font-weight: 500;
-  }
+footer {
+
+  padding: 1em;
+  background-color: rgb(177, 169, 128);
+  margin-top: 1em;
+  text-align: center;
+  color: #333;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
 
 @media screen and (max-width: 1366px) {
     html {

@@ -12,7 +12,7 @@
         rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="../styling/detail-recipe.css">
+    <link rel="stylesheet" href="styling/detail-recipe.css">
 </head>
 
 <body>
@@ -29,13 +29,13 @@
         </div>
         <div class="cmenu">
             <a href="browseBy-dup.html" id="search"><i data-feather="search"></i></a>
-            <a href="profile.html" id="user"><i data-feather="user"></i></a>
+            <a href="login.html" class="btn-login">Login</a>
             <a href="" id="menu"><i data-feather="menu"></i></a>
         </div>
 
     </nav>
     <div class="content-wrap">
-        <div class="back"><a href="profile.html"> << Back </a></div>
+        <div class="back"><a href="browseBy.html"> << Back </a></div>
         <!--Bagian Atas-->
         <div class="atas-wrap">
             <div class="ba-title">
@@ -48,7 +48,7 @@
         </div>
         <div class="ba-simbol">
             <div class="ba-name">
-                <div class="image"><a href="profile.html"><img src="../image/Image-people-2.avif" alt="img 1"></a></div>
+                <div class="image"><a href="profile.html"><img src="image/Image-people-2.avif" alt="img 1"></a></div>
                 <div class="name">Luna</div>
                 <div class="name">|</div>
                 <div class="date">May 12, 2021</div>
@@ -64,83 +64,97 @@
             <div class="ingredient">
                 <h1>Ingredient</h1>
                 <div class="main-ingredient">
-                    <div class="card-ing">
+                    <div class="card-ing-1">
                         <div class="qty-ing">1</div>
                         <div class="name-ing">1 ½ cups all-purpose flour</div>
-                        <div class="trash-btn"><i data-feather="trash"></i></div>
                     </div>
-                    <div class="card-ing">
+                    <div class="card-ing-1">
                         <div class="qty-ing">2</div>
                         <div class="name-ing">3 ½ teaspoons baking powder</div>
-                        <div class="trash-btn"><i data-feather="trash"></i></div>
                     </div>
-                    <div class="card-ing">
+                    <div class="card-ing-1">
                         <div class="qty-ing">3</div>
                         <div class="name-ing">1 tablespoon white sugar</div>
-                        <div class="trash-btn"><i data-feather="trash"></i></div>
                     </div>
-                    <div class="card-ing">
+                    <div class="card-ing-1">
                         <div class="qty-ing">4</div>
                         <div class="name-ing">¼ teaspoon salt, or more to taste</div>
-                        <div class="trash-btn"><i data-feather="trash"></i></div>
                     </div>
-                    <div class="card-ing">
+                    <div class="card-ing-1">
                         <div class="qty-ing">5</div>
                         <div class="name-ing">1 ¼ cups milk</div>
-                        <div class="trash-btn"><i data-feather="trash"></i></div>
                     </div>
-                    <div class="card-ing">
+                    <div class="card-ing-1">
                         <div class="qty-ing">6</div>
                         <div class="name-ing">3 tablespoons butter, melted</div>
-                        <div class="trash-btn"><i data-feather="trash"></i></div>
-                    </div>
-                    <div class="card-ing-plus">
-                        <div class="name-ing">Add Ingredient</div>
-                        <div class="plus-btn"><i data-feather="plus"></i></div>
                     </div>
                 </div>
             </div>
             <div class="step-cook">
                 <h1>Cooking Step</h1>
                 <div class="main-step-cook">
-                    <div class="step-cook-card">
+                    <div class="step-cook-card-1">
                         <div class="no-step-cook">1</div>
                         <div class="word-step-cook">Sift flour, baking powder, sugar, and salt together in a large bowl. Make a well in the center and add milk, melted butter, and egg; mix until smooth.</div>
-                        <div class="trash-btn"><i data-feather="trash"></i></div>
                     </div>
-                    <div class="step-cook-card">
+                    <div class="step-cook-card-1">
                         <div class="no-step-cook">2</div>
                         <div class="word-step-cook">Heat a lightly oiled griddle or pan over medium-high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake.</div>
-                        <div class="trash-btn"><i data-feather="trash"></i></div>
                     </div>
-                    <div class="step-cook-card">
+                    <div class="step-cook-card-1">
                         <div class="no-step-cook">3</div>
                         <div class="word-step-cook">cook until bubbles form and the edges are dry, about 2 to 3 minutes.</div>
-                        <div class="trash-btn"><i data-feather="trash"></i></div>
                     </div>
-                    <div class="step-cook-card">
+                    <div class="step-cook-card-1">
                         <div class="no-step-cook">4</div>
                         <div class="word-step-cook">Flip and cook until browned on the other side. Repeat with remaining batter.</div>
-                        <div class="trash-btn"><i data-feather="trash"></i></div>
-                    </div>
-                    <div class="step-cook-card">
-                        <div class="word-step-cook">Add Cooking Step</div>
-                        <div class="plus-btn"><i data-feather="plus"></i></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="btn-edit">
-            <button class="save-recipe">Save Recipie</button>
-            <button class="delete-recipe">Delete Recipe</button>
-        </div>
         <!--Comment Section-->
+        <div class="comment-section-1">
+            <h1>Comment</h1>
+            <div class="comment-main">
+                <div class="star-button">
+                    <i data-feather="star" ></i>
+                    <i data-feather="star" ></i>
+                    <i data-feather="star" ></i>
+                    <i data-feather="star" ></i>
+                    <i data-feather="star" ></i>
+                </div>
+                <div class="search">
+                    <div class="search-container">
+                        <input type="search" id="search-input"  placeholder="Comment Here......">
+                        <i data-feather="send" id="search-btn"></i>
+                    </div>
+                </div>
+                <div class="inf-comment-title">COMMENT</div>
+                <div class="card-comment">
+                    <div class="inf-image">
+                        <img src="image/image-people.avif" alt="img 1">
+                    </div>
+                    <div class="inf-comment">
+                        <div class="inf-name">Sarah</div>
+                        <div class="inf-date">19 Agustus 2022</div>
+                        <div class="inf-star">
+                            <i data-feather="star" ></i>
+                            <i data-feather="star" ></i>
+                            <i data-feather="star" ></i>
+                            <i data-feather="star" ></i>
+                            <i data-feather="star" ></i>
+                        </div>
+                        <div class="comment">GOOD RECIPE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <footer>
         <p>&copy; 2024 King Culinary. All rights reserved.</p>
     </footer>
-    <script src="../js/filter.js"></script>
-    <script src="../JS/script.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="JS/script.js"></script>
     <script>
         feather.replace()
     </script>

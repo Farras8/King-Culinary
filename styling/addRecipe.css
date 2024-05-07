@@ -58,7 +58,7 @@ body {
     transform: scale(1.1);
     cursor: pointer;
   }
-  
+
   nav {
     display: flex;
     justify-content: space-between;
@@ -96,9 +96,19 @@ body {
     cursor: pointer;
   }
 
-h2 {
-    margin-top: 130px; /* Adjusted margin to push the h2 below the navbar */
-    text-align: center;
+  .add-wrap{
+    margin-top: 10em;
+    margin-bottom: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .add-wrap h2 {
+    font-weight: bold;
+    color: #797355;
+    margin-bottom: 1em;
 }
 
 form {

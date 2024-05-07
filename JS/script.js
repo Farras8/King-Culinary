@@ -37,51 +37,56 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $('.register-button').click(function (event) {
-        event.preventDefault(); // Menghentikan tindakan default dari tombol submit
+        event.preventDefault(); 
 
-        // Mendapatkan nilai email, password, dan username
+
         var email = $('#login-email').val().trim();
         var password = $('#login-pass').val().trim();
         var username = $('#login-username').val().trim();
         var repeatPass = $('#login-pass-repeat').val().trim();
 
-        // Validasi email menggunakan regular expression
+
         var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         var isValidEmail = emailPattern.test(email);
         
-        // Validasi password
         var isValidPassword = password.length >= 7 && /[^\w\s]/.test(password);
 
-        // Validasi username
         var isUsernameValid = username.length > 0;
 
         var isRepeatPassValid = repeatPass == password;
 
-        // Memeriksa apakah email, password, dan username telah diisi dengan benar
-        if (isValidEmail && isValidPassword && isUsernameValid) {
-            // Jika sudah terisi dan valid, arahkan pengguna ke halaman index.html
-            window.location.href = 'login.html';
+        if (isValidEmail && isValidPassword && isUsernameValid && isRepeatPassValid) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Successfully Registered!',
+                text: 'You can now log in.',
+                confirmButtonText: 'OK'
+            }).then((result) => {
+                if (result.isConfirmed) {
+
+                    window.location.href = 'login.html';
+                }
+            });
         } else {
-            // Jika tidak, tampilkan pesan kesalahan di bawah input field
             if (!isValidEmail) {
                 $('#email-error').text('*Please enter a valid email address.');
             } else {
-                $('#email-error').text(''); // Menghapus pesan error jika email valid
+                $('#email-error').text(''); 
             }
             if (!isValidPassword) {
                 $('#password-error').text('*Password must be at least 7 characters long and contain at least one symbol.');
             } else {
-                $('#password-error').text(''); // Menghapus pesan error jika password valid
+                $('#password-error').text(''); 
             }
             if (!isUsernameValid) {
                 $('#name-error').text('*Username cannot be empty.');
             } else {
-                $('#name-error').text(''); // Menghapus pesan error jika username valid
+                $('#name-error').text(''); 
             }
             if (!isRepeatPassValid) {
                 $('#repeat-password-error').text('*Password not match.');
             } else {
-                $('#repeat-password-error').text(''); // Menghapus pesan error jika username valid
+                $('#repeat-password-error').text(''); 
             }
         }
     });
