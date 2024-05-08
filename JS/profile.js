@@ -13,12 +13,12 @@ let recipes = {
         {
             recipeName: "Smoothie Bowl",
             category: "MyRecipe",
-            image: "https://images.themodernproper.com/billowy-turkey/production/posts/2021/Smoothie-Bowl-8.jpeg?w=800&q=82&auto=format&fit=crop&dm=1641225383&s=aa57e01f365c4d0887b3e21589a33029",
+            image: "../image/7010038_CL_Bowls_Golden_Mango_Smoothie_Bowl_119-a7f61a8de85846ffbc28bdb174de0263.jpg",
         },
         {
             recipeName: "Avocado Toast",
             category: "MyRecipe",
-            image: "https://gimmedelicious.com/wp-content/uploads/2016/07/avocado-toast-7-of-13.jpg",
+            image: "../image/avocado.avif",
         },
         {
             recipeName: "French Toast",
@@ -28,7 +28,7 @@ let recipes = {
         {
             recipeName: "Chocolate Cake",
             category: "LikedRecipe",
-            image: "https://scientificallysweet.com/wp-content/uploads/2023/06/IMG_4087-er-new1.jpg",
+            image: "../image/choc.avif",
         },
     ],
 };

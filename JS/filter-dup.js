@@ -16,6 +16,11 @@ let recipes = {
             image: "../image/7010038_CL_Bowls_Golden_Mango_Smoothie_Bowl_119-a7f61a8de85846ffbc28bdb174de0263.jpg",
         },
         {
+            recipeName: "Tortilla Breakfast Wrap",
+            category: "Breakfast",
+            image: "../image/breakfast title.jpeg",
+        },
+        {
             recipeName: "Avocado Toast",
             category: "Breakfast",
             image: "https://joyfoodsunshine.com/wp-content/uploads/2022/07/best-omelette-recipe-1.jpg",
@@ -266,10 +271,13 @@ for (let i of recipes.data) {
     let image = document.createElement("img");
     image.setAttribute("src", i.image);
     image.addEventListener("click", function () {
-        // Check if recipeName is "Pancakes"
+        // Check if recipeName is "Pancakes" or "Tortilla Breakfast Wrap"
         if (i.recipeName.toLowerCase() === "pancakes") {
-            // If "Pancakes" is clicked, redirect to edit-recipe.html
-            window.location.href = "pancake.html";
+            // If "Pancakes" is clicked, redirect to pancake-dup.html
+            window.location.href = "pancake-dup.html";
+        } else if (i.recipeName.toLowerCase() === "tortilla breakfast wrap") {
+            // If "Tortilla Breakfast Wrap" is clicked, redirect to detail-recipe.html
+            window.location.href = "detail-recipe.html";
         }
     });
     imgContainer.appendChild(image);

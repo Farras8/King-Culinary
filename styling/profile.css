@@ -195,7 +195,6 @@ nav .Navbar a.active {
 
 
 #recipes {
-    display: grid;
     display: flex;
     flex-wrap: wrap;
     gap: 3em;
@@ -213,8 +212,9 @@ nav .Navbar a.active {
   .card {
     border-radius: 20px;
     background-color: #E4DAA9;
-    max-width: 18em;
+    width: 350px;
     padding: 1em;
+    border: 1px solid #8d834b ;
   }
   
   .image-container {
@@ -223,7 +223,6 @@ nav .Navbar a.active {
   }
 
 
-  
   img {
     border-radius: 20px;
     width: 100%;
@@ -301,10 +300,7 @@ nav .Navbar a.active {
     color: white; /* Adjust hover text color */
   }
 
-  #delete:hover{
-    background-color: red;
-    color: white;
-  }
+
 
   /* Style untuk form */
 /* Style untuk form */
@@ -442,6 +438,13 @@ footer {
       padding: 5px;
       width: 250px;
     }
+    .card {
+      border-radius: 20px;
+      background-color: #E4DAA9;
+      width: 250px;
+      padding: 1em;
+      border: 1px solid #8d834b ;
+    }
 }
 
 @media screen and (max-width: 450px) {
@@ -489,5 +492,12 @@ footer {
     .follow-btn{
       padding: 5px;
       width: 200px;
+    }
+    .card {
+      border-radius: 20px;
+      background-color: #E4DAA9;
+      width: 200px;
+      padding: 1em;
+      border: 1px solid #8d834b ;
     }
 }
