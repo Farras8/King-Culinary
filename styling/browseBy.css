@@ -392,7 +392,98 @@ footer {
     border-radius: 50%;
   }
 }
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 70%;
+  }
 
+  #menu {
+    display: block;
+  }
+
+  #menu:hover {
+    transform: scale(1.2);
+  }
+
+  nav .Navbar {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgba(177, 169, 128, 0.7);
+    width: 20rem;
+    height: 100vh;
+    transition: 0.5s;
+  }
+
+  nav .Navbar.active {
+    right: 0;
+  }
+
+  nav .Navbar a {
+    font-weight: bold;
+    color: #494429;
+    display: block;
+    margin: 1.75rem;
+    padding: 0.5rem;
+  }
+   
+  #search-input {
+    box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.2);
+    width: 300px;
+    height: 40px;
+    padding: 1em;
+    border-radius: 20px;
+    padding-right: 40px;
+  }
+  .br-img-item {
+    width: 200px;
+    height: 150px;
+  }
+  #recipes {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 3em;
+    padding: 2em 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image-container {
+    width: 135px; 
+    height: 135px; 
+    overflow: hidden; 
+  }
+  
+  .image-container img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+  }
+
+  .card {
+    border-radius: 20px;
+    max-width: 18em;
+    margin-top: 3em;
+    padding: 1em;
+  }
+  .love-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+    color: white;
+    padding: 5px;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(190, 30, 30);
+    border-radius: 50%;
+  }
+  .browse-wrap{
+    margin-top: 16em;
+  }
+}
 @media screen and (max-width: 768px) {
   html {
     font-size: 70%;

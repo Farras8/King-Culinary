@@ -141,7 +141,12 @@ body {
         width: 40%;
     }
 }
+@media (max-width: 900px) {
+    .login {
+        width: 70%;
+    }
 
+}
 /* For screens smaller than 768px */
 @media (max-width: 768px) {
     .login {
