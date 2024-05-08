@@ -109,7 +109,7 @@ nav .Navbar a.active {
   padding: 11rem 7% 1.4rem;
   text-align: center;
   font-size: 1.5rem;
-  margin-top: 1.5em;
+  margin-top: 4em;
 }
 
 .AboutUs h2 {
@@ -127,7 +127,7 @@ nav .Navbar a.active {
 
 .imageAboutus img {
   width: 400px;
-  height: 350px;
+  height: 300px;
 }
 
 .contentImage {
@@ -326,7 +326,7 @@ footer {
 
 @media screen and (max-width: 450px) {
   html {
-    font-size: 50%;
+    font-size: 40%;
   }
 
   #menu {
@@ -363,8 +363,8 @@ footer {
   }
 
   .imageAboutus img {
-    width: 300px;
-    height: 200px;
+    width: 250px;
+    height: 150px;
   }
 }
 
@@ -374,7 +374,7 @@ footer {
   }
 
   .imageAboutus img {
-    width: 100px;
+    width: 150px;
     height: 150px;
   }
 
@@ -385,6 +385,6 @@ footer {
 
   .card {
     width: 200px;
-    height: 300px;
+    height: 100px;
   }
 }

@@ -556,7 +556,7 @@ footer {
 
 @media screen and (max-width: 450px) {
   html {
-    font-size: 50%;
+    font-size: 40%;
   }
 
   #menu {
@@ -566,7 +566,6 @@ footer {
   #menu:hover {
     transform: scale(1.2);
   }
-
   nav .Navbar {
     position: absolute;
     top: 100%;
@@ -614,7 +613,7 @@ footer {
     height: 80px;
   } 
   .slider .list .item .slide-text {
-    font-size: 18px;
+    font-size: 15px;
   }
 
 }
