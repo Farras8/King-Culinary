@@ -181,6 +181,33 @@ document.getElementById('profile_photo').onchange = function (evt) {
 };
 
 feather.replace();
+function showConfirmationAndSuccessAlert() {
+    Swal.fire({
+        title: 'Are you sure you want to update your profile?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, update it!',
+        cancelButtonText: 'No, cancel!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            showSuccessAlert();
+        }
+    });
+}
+
+function showSuccessAlert() {
+    Swal.fire({
+        icon: 'success',
+        title: 'Successfully Updated!',
+        confirmButtonText: 'OK'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = 'profile.html';
+        }
+    });
+}
 
 $(document).ready(function () {
     function validateInput(inputId, errorId, errorMessage, isValid) {
@@ -199,8 +226,8 @@ $(document).ready(function () {
 
     $('#pass').on('input', function () {
         var password = $(this).val().trim();
-        var isValidPassword = password.length >= 7 && /[^\w\s]/.test(password);
-        validateInput('#pass', '#password-error', '*Password must be at least 7 characters long and contain at least one symbol.', isValidPassword);
+        var isValidPassword = /[^\w\s]/.test(password);
+        validateInput('#pass', '#password-error', '*Contain at least one symbol.', isValidPassword);
     });
 
     $('#email').on('input', function () {
@@ -228,17 +255,17 @@ $(document).ready(function () {
         var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         var isValidEmail = emailPattern.test(email);
 
-        var isValidPassword = password.length >= 7 && /[^\w\s]/.test(password);
+        var isValidPassword = /[^\w\s]/.test(password);
 
         var isUsernameValid = username.length > 0;
 
         var isRepeatPassValid = repeatPass === password;
 
         if (isValidEmail && isValidPassword && isUsernameValid && isRepeatPassValid) {
-            window.location.href = 'profile.html';
+            showConfirmationAndSuccessAlert();
         } else {
             validateInput('#username', '#name-error', '*Username cannot be empty.', isUsernameValid);
-            validateInput('#pass', '#password-error', '*Password must be at least 7 characters long and contain at least one symbol.', isValidPassword);
+            validateInput('#pass', '#password-error', '*Contain at least one symbol.', isValidPassword);
             validateInput('#email', '#email-error', '*Please enter a valid email address.', isValidEmail);
             validateInput('#pass-repeat', '#repeat-password-error', '*Password not match.', isRepeatPassValid);
         }

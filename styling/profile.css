@@ -29,23 +29,23 @@ body {
   color: black;
 }
 
-#search{
+#search {
   font-weight: bold;
   color: #494429;
 }
 
-#search:hover{
+#search:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
 
-.btn-login{
+.btn-login {
   font-weight: bold;
   text-decoration: none;
   color: #494429;
 }
 
-.btn-login:hover{
+.btn-login:hover {
   text-decoration: underline;
 }
 
@@ -60,17 +60,17 @@ body {
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.25rem 6%;
-    background-color: rgba(177, 169, 128, 0.7);
-    border-bottom: 1px solid #9e9a9a;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 5000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 6%;
+  background-color: rgba(177, 169, 128, 0.7);
+  border-bottom: 1px solid #9e9a9a;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5000;
 }
 
 nav .Navbar li {
@@ -95,68 +95,72 @@ nav .Navbar a.active {
   padding: 10px;
   cursor: pointer;
 }
-.back{
+
+.back {
   font-size: large;
   font-weight: bold;
   color: #797355;
 }
-.back a{
+
+.back a {
   text-decoration: none;
   color: #797355;
 }
 
-.back a:hover{
+.back a:hover {
   cursor: pointer;
   text-decoration: underline;
 }
+
 .profile-wrap {
-    margin-top: 14em;
-    display: flex;
-    flex-direction: column;
-    margin-left: 3em;
-    margin-right: 3em;
+  margin-top: 14em;
+  display: flex;
+  flex-direction: column;
+  margin-left: 3em;
+  margin-right: 3em;
 }
 
 .profile-title {
-    text-align: center;
-    margin-bottom: 2em;
-    font-weight: bold;
-    color: #797355;
+  text-align: center;
+  margin-bottom: 2em;
+  font-weight: bold;
+  color: #797355;
 }
 
 .profile-image img {
-    height: 300px;
-    width: 300px;
-    border-radius: 50%;
-    border: 1px solid #797355;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  border: 1px solid #797355;
 }
 
 .profile-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
 }
 
 .profile-category {
-    display: flex;
-    gap: 3em;
-    margin-bottom: 2em;
+  display: flex;
+  gap: 3em;
+  margin-bottom: 2em;
 }
 
 .follower {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .following {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.follow-btn{
+
+.follow-btn {
   padding: 10px;
   width: 500px;
   margin-bottom: 3em;
@@ -168,141 +172,152 @@ nav .Navbar a.active {
   text-decoration: none;
   color: #ffffff;
 }
-.follow-btn:hover{
+
+.follow-btn:hover {
   cursor: pointer;
-  background-color:#167266 ;
+  background-color: #167266;
 }
+
 .profile-title-recipe {
-    border-top: 1px solid rgb(18, 189, 166);
-    padding-top: 1em;
-    padding-bottom: 1em;
-    display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid rgb(18, 189, 166);
+  border-top: 1px solid rgb(18, 189, 166);
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid rgb(18, 189, 166);
 }
 
 .my-recipe:hover {
-    transform: scale(1.1);
-    text-decoration: underline;
-    cursor: pointer;
+  transform: scale(1.1);
+  text-decoration: underline;
+  cursor: pointer;
 }
 
-.liked-recipe:hover{
-    transform: scale(1.1);
-    text-decoration: underline;
-    cursor: pointer;
+.liked-recipe:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 
 #recipes {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3em;
-    justify-content: center;
-    align-items: center;
-    padding: 2em 0;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3em;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 0;
+}
 
-  .profile-judul{
-    margin-top: 2em;
-    text-align: center;
-    color: #797355;
-  }
-  
-  .card {
-    border-radius: 20px;
-    background-color: #E4DAA9;
-    width: 350px;
-    padding: 1em;
-    border: 1px solid #8d834b ;
-  }
-  
-  .image-container {
-    position: relative;
-    text-align: center;
-  }
+.profile-judul {
+  margin-top: 2em;
+  text-align: center;
+  color: #797355;
+}
 
+.card {
+  border-radius: 20px;
+  background-color: #E4DAA9;
+  width: 350px;
+  padding: 1em;
+  border: 1px solid #8d834b;
+}
 
-  img {
-    border-radius: 20px;
-    width: 100%;
-    max-width: 100%;
-    height: 15em;
-  }
-  
-  img:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-  }
-
-  .container {
-    padding-top: 1em;
-    color: #110f29;
-  }
-  
-  .container h5 {
-    text-align: center;
-    font-weight: 500;
-  }
-  
-  .hide {
-    display: none;
-  }
-  .recipe-name{
-    text-align: center;
-    font-weight: bold;
-    color: #797355;
-  }
-
-  .user-settings{
-    border-top: 1px solid rgb(18, 189, 166);
-    padding-top: 1em;
-  }
-  .us-title{
-    text-align: center;
-    font-weight: bold;
-    color: #797355;
-    padding-bottom: 0.5em;
-    border-bottom: 1px solid rgb(18, 189, 166);
-  }
-
-  .user-settings ul {
-    /* Remove default list styling */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    padding-top: 20px; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-    padding-bottom: 10px;
-  }
-  
-  .user-settings ul li a {
-    /* Button styles */
-    padding-top: 20px;
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    background-color: #a39c7b; /* Adjust background color */
-    color: #110f29; /* Adjust text color */
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer; /* Indicate clickable behavior */
-    
-    /* Centering the buttons horizontally */
-    text-align: center;
-  }
-  
-  .user-settings ul li a:hover {
-    background-color: rgb(18, 189, 166); /* Adjust hover background color */
-    color: white; /* Adjust hover text color */
-  }
+.image-container {
+  position: relative;
+  text-align: center;
+}
 
 
+img {
+  border-radius: 20px;
+  width: 100%;
+  max-width: 100%;
+  height: 15em;
+}
 
-  /* Style untuk form */
+img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.container {
+  padding-top: 1em;
+  color: #110f29;
+}
+
+.container h5 {
+  text-align: center;
+  font-weight: 500;
+}
+
+.hide {
+  display: none;
+}
+
+.recipe-name {
+  text-align: center;
+  font-weight: bold;
+  color: #797355;
+}
+
+.user-settings {
+  border-top: 1px solid rgb(18, 189, 166);
+  padding-top: 1em;
+}
+
+.us-title {
+  text-align: center;
+  font-weight: bold;
+  color: #797355;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid rgb(18, 189, 166);
+}
+
+.user-settings ul {
+  /* Remove default list styling */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding-top: 20px;
+  /* Remove default padding */
+  margin: 0;
+  /* Remove default margin */
+  padding-bottom: 10px;
+}
+
+.user-settings ul li a {
+  /* Button styles */
+  padding-top: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #a39c7b;
+  /* Adjust background color */
+  color: #110f29;
+  /* Adjust text color */
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  /* Indicate clickable behavior */
+
+  /* Centering the buttons horizontally */
+  text-align: center;
+}
+
+.user-settings ul li a:hover {
+  background-color: rgb(18, 189, 166);
+  /* Adjust hover background color */
+  color: white;
+  /* Adjust hover text color */
+}
+
+
+
+/* Style untuk form */
 /* Style untuk form */
 .modal-body {
   padding: 20px;
@@ -331,11 +346,13 @@ input[type="file"] {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-sizing: border-box; /* Untuk memastikan padding tidak menambah lebar input */
+  box-sizing: border-box;
+  /* Untuk memastikan padding tidak menambah lebar input */
 }
 
 #photo-preview {
-  max-width: 200px; /* Atur ukuran maksimum pratinjau foto */
+  max-width: 200px;
+  /* Atur ukuran maksimum pratinjau foto */
 }
 
 
@@ -372,7 +389,7 @@ input[type="file"] {
 .btn-primary:hover {
   background-color: #0056b3;
 }
-  
+
 
 footer {
 
@@ -386,118 +403,126 @@ footer {
 }
 
 @media screen and (max-width: 1366px) {
-    html {
-        font-size: 80%;
-    }
+  html {
+    font-size: 80%;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    html {
-        font-size: 70%;
-    }
+  html {
+    font-size: 70%;
+  }
 
-    #menu {
-        display: block;
-    }
+  #menu {
+    display: block;
+  }
 
-    #menu:hover {
-        transform: scale(1.2);
-    }
+  #menu:hover {
+    transform: scale(1.2);
+  }
 
-    nav .Navbar {
-        position: absolute;
-        top: 100%;
-        right: -100%;
-        background-color: rgba(177, 169, 128, 0.7);
-        width: 20rem;
-        height: 100vh;
-        transition: 0.5s;
-    }
+  nav .Navbar {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgba(177, 169, 128, 0.7);
+    width: 20rem;
+    height: 100vh;
+    transition: 0.5s;
+  }
 
-    nav .Navbar.active {
-        right: 0;
-    }
+  nav .Navbar.active {
+    right: 0;
+  }
 
-    nav .Navbar a {
-        color: black;
-        display: block;
-        margin: 1.75rem;
-        padding: 0.5rem;
-    }
+  nav .Navbar a {
+    font-weight: bold;
+    color: #494429;
+    display: block;
+    margin: 1.75rem;
+    padding: 0.5rem;
+  }
 
-    .br-img-item {
-        width: 200px;
-        height: 150px;
-    }
-    .profile-image img{
-      margin-top: 3em;
-      height: 200px;
-      width: 200px;
-    }
-    .follow-btn{
-      padding: 5px;
-      width: 250px;
-    }
-    .card {
-      border-radius: 20px;
-      background-color: #E4DAA9;
-      width: 250px;
-      padding: 1em;
-      border: 1px solid #8d834b ;
-    }
+  .br-img-item {
+    width: 200px;
+    height: 150px;
+  }
+
+  .profile-image img {
+    margin-top: 3em;
+    height: 200px;
+    width: 200px;
+  }
+
+  .follow-btn {
+    padding: 5px;
+    width: 250px;
+  }
+
+  .card {
+    border-radius: 20px;
+    background-color: #E4DAA9;
+    width: 250px;
+    padding: 1em;
+    border: 1px solid #8d834b;
+  }
 }
 
 @media screen and (max-width: 450px) {
-    html {
-        font-size: 50%;
-    }
+  html {
+    font-size: 50%;
+  }
 
-    #menu {
-        display: block;
-    }
+  #menu {
+    display: block;
+  }
 
-    #menu:hover {
-        transform: scale(1.2);
-    }
+  #menu:hover {
+    transform: scale(1.2);
+  }
 
-    nav .Navbar {
-        position: absolute;
-        top: 100%;
-        right: -100%;
-        background-color: rgba(177, 169, 128, 0.7);
-        width: 20rem;
-        height: 100vh;
-    }
+  nav .Navbar {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgba(177, 169, 128, 0.7);
+    width: 20rem;
+    height: 100vh;
+  }
 
-    nav .Navbar.active {
-        right: 0;
-    }
+  nav .Navbar.active {
+    right: 0;
+  }
 
-    nav .Navbar a {
-        color: black;
-        display: block;
-        margin: 1.75rem;
-        padding: 0.5rem;
-    }
+  nav .Navbar a {
+    font-weight: bold;
+    color: #494429;
+    display: block;
+    margin: 1.75rem;
+    padding: 0.5rem;
+  }
 
-    .br-img-item {
-        width: 150px;
-        height: 100px;
-    }
-    .profile-image img{
-      margin-top: 3em;
-      height: 150px;
-      width: 150px;
-    }
-    .follow-btn{
-      padding: 5px;
-      width: 200px;
-    }
-    .card {
-      border-radius: 20px;
-      background-color: #E4DAA9;
-      width: 200px;
-      padding: 1em;
-      border: 1px solid #8d834b ;
-    }
+  .br-img-item {
+    width: 150px;
+    height: 100px;
+  }
+
+  .profile-image img {
+    margin-top: 3em;
+    height: 150px;
+    width: 150px;
+  }
+
+  .follow-btn {
+    padding: 5px;
+    width: 200px;
+  }
+
+  .card {
+    border-radius: 20px;
+    background-color: #E4DAA9;
+    width: 200px;
+    padding: 1em;
+    border: 1px solid #8d834b;
+  }
 }

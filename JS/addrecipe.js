@@ -135,7 +135,6 @@ function addCookingStep(button) {
     function showConfirmationAndSuccessAlert() {
         Swal.fire({
             title: 'Are you sure you want to save your recipe?',
-            text: 'Once saved, you won\'t be able to modify it.',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -152,7 +151,7 @@ function addCookingStep(button) {
     function showSuccessAlert() {
         Swal.fire({
             icon: 'success',
-            title: 'Successfully Shared!',
+            title: 'Successfully Saved!',
             confirmButtonText: 'OK'
         }).then((result) => {
             if (result.isConfirmed) {
