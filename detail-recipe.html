@@ -179,6 +179,8 @@
             // Redirect pengguna ke halaman login jika mereka mengklik tombol "Login"
             if (result.isConfirmed) {
                 window.location.href = 'login.html';
+            }else{
+            location.reload();
             }
         });
     

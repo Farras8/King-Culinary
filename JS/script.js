@@ -179,6 +179,8 @@ document.getElementById('up-recipe').addEventListener('click', function (event) 
         // Redirect pengguna ke halaman login jika mereka mengklik tombol "Login"
         if (result.isConfirmed) {
             window.location.href = 'login.html';
+        }else{
+            location.reload();
         }
     });
 
@@ -198,6 +200,8 @@ document.getElementById('up-recipe-btn').addEventListener('click', function (eve
         // Redirect pengguna ke halaman login jika mereka mengklik tombol "Login"
         if (result.isConfirmed) {
             window.location.href = 'login.html';
+        }else{
+            location.reload();
         }
     });
 
