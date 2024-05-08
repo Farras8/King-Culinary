@@ -208,41 +208,42 @@ function showSuccessAlert() {
         }
     });
 }
+function validateInput(inputId, errorId, errorMessage, isValid) {
+    if (!isValid) {
+        $(errorId).text(errorMessage);
+    } else {
+        $(errorId).text('');
+    }
+}
+
+$('#username').on('input', function () {
+    var username = $(this).val().trim();
+    var isUsernameValid = username.length > 0;
+    validateInput('#username', '#name-error', '*Username cannot be empty.', isUsernameValid);
+});
+
+$('#pass').on('input', function () {
+    var password = $(this).val().trim();
+    var isValidPassword = /[^\w\s]/.test(password);
+    validateInput('#pass', '#password-error', '*Contain at least one symbol.', isValidPassword);
+});
+
+$('#email').on('input', function () {
+    var email = $(this).val().trim();
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var isValidEmail = emailPattern.test(email);
+    validateInput('#email', '#email-error', '*Please enter a valid email address.', isValidEmail);
+});
+
+$('#pass-repeat').on('input', function () {
+    var repeatPass = $(this).val().trim();
+    var password = $('#pass').val().trim();
+    var isRepeatPassValid = repeatPass === password;
+    validateInput('#pass-repeat', '#repeat-password-error', '*Password not match.', isRepeatPassValid);
+});
 
 $(document).ready(function () {
-    function validateInput(inputId, errorId, errorMessage, isValid) {
-        if (!isValid) {
-            $(errorId).text(errorMessage);
-        } else {
-            $(errorId).text('');
-        }
-    }
 
-    $('#username').on('input', function () {
-        var username = $(this).val().trim();
-        var isUsernameValid = username.length > 0;
-        validateInput('#username', '#name-error', '*Username cannot be empty.', isUsernameValid);
-    });
-
-    $('#pass').on('input', function () {
-        var password = $(this).val().trim();
-        var isValidPassword = /[^\w\s]/.test(password);
-        validateInput('#pass', '#password-error', '*Contain at least one symbol.', isValidPassword);
-    });
-
-    $('#email').on('input', function () {
-        var email = $(this).val().trim();
-        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        var isValidEmail = emailPattern.test(email);
-        validateInput('#email', '#email-error', '*Please enter a valid email address.', isValidEmail);
-    });
-
-    $('#pass-repeat').on('input', function () {
-        var repeatPass = $(this).val().trim();
-        var password = $('#pass').val().trim();
-        var isRepeatPassValid = repeatPass === password;
-        validateInput('#pass-repeat', '#repeat-password-error', '*Password not match.', isRepeatPassValid);
-    });
 
     $('.update-button').click(function (event) {
         event.preventDefault();

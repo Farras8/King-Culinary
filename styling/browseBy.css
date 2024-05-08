@@ -429,7 +429,7 @@ footer {
    
   #search-input {
     box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.2);
-    width: 300px;
+    width: 500px;
     height: 40px;
     padding: 1em;
     border-radius: 20px;
@@ -483,6 +483,7 @@ footer {
   .browse-wrap{
     margin-top: 16em;
   }
+  
 }
 @media screen and (max-width: 768px) {
   html {
@@ -521,7 +522,7 @@ footer {
    
   #search-input {
     box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.2);
-    width: 300px;
+    width: 500px;
     height: 40px;
     padding: 1em;
     border-radius: 20px;
@@ -615,7 +616,7 @@ footer {
   }
   #search-input {
     box-shadow: 8px 8px 10px 0 rgba(0, 0, 0, 0.2);
-    width: 300px;
+    width: 250px;
     height: 40px;
     padding: 1em;
     border-radius: 20px;

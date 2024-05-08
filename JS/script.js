@@ -122,45 +122,88 @@ document.addEventListener('click', (event) => {
     }
 });
 
-let slider = document.querySelector('.slider .list');
-let items = document.querySelectorAll('.slider .list .item');
-let next = document.getElementById('next');
-let prev = document.getElementById('prev');
-let dots = document.querySelectorAll('.slider .dots li');
+document.addEventListener('DOMContentLoaded', function() {
+    let slider = document.querySelector('.slider .list');
+    let items = document.querySelectorAll('.slider .list .item');
+    let next = document.getElementById('next');
+    let prev = document.getElementById('prev');
+    let dots = document.querySelectorAll('.slider .dots li');
 
-let lengthItems = items.length - 1;
-let active = 0;
-next.onclick = function () {
-    active = active + 1 <= lengthItems ? active + 1 : 0;
-    reloadSlider();
-}
-prev.onclick = function () {
-    active = active - 1 >= 0 ? active - 1 : lengthItems;
-    reloadSlider();
-}
-let refreshInterval = setInterval(() => { next.click() }, 5000);
-function reloadSlider() {
-    slider.style.left = -items[active].offsetLeft + 'px';
-    // 
-    let last_active_dot = document.querySelector('.slider .dots li.active');
-    last_active_dot.classList.remove('active');
-    dots[active].classList.add('active');
+    let lengthItems = items.length - 1;
+    let active = 0;
+    let isDragging = false;
+    let startPosition = 0;
+    let endPosition = 0;
 
-    clearInterval(refreshInterval);
-    refreshInterval = setInterval(() => { next.click() }, 5000);
+    // Function to handle mouse move event during dragging
+    function handleDrag(event) {
+        if (isDragging) {
+            let newPosition = event.clientX - startPosition;
+            slider.style.left = -items[active].offsetLeft + newPosition + 'px';
+        }
+    }
 
-
-}
-
-dots.forEach((li, key) => {
-    li.addEventListener('click', () => {
-        active = key;
+    next.onclick = function() {
+        active = active + 1 <= lengthItems ? active + 1 : 0;
         reloadSlider();
+    }
+    prev.onclick = function() {
+        active = active - 1 >= 0 ? active - 1 : lengthItems;
+        reloadSlider();
+    }
+    let refreshInterval = setInterval(() => {
+        next.click()
+    }, 5000);
+
+    function reloadSlider() {
+        slider.style.left = -items[active].offsetLeft + 'px';
+
+        let last_active_dot = document.querySelector('.slider .dots li.active');
+        last_active_dot.classList.remove('active');
+        dots[active].classList.add('active');
+
+        clearInterval(refreshInterval);
+        refreshInterval = setInterval(() => {
+            next.click()
+        }, 5000);
+    }
+
+    dots.forEach((li, key) => {
+        li.addEventListener('click', () => {
+            active = key;
+            reloadSlider();
+        })
     })
-})
-window.onresize = function (event) {
-    reloadSlider();
-};
+
+    window.onresize = function(event) {
+        reloadSlider();
+    };
+
+    // Mouse events to handle dragging
+    slider.addEventListener('mousedown', function(event) {
+        isDragging = true;
+        startPosition = event.clientX;
+        slider.style.transition = 'none';
+        document.addEventListener('mousemove', handleDrag);
+    });
+
+    document.addEventListener('mouseup', function(event) {
+        if (isDragging) {
+            isDragging = false;
+            endPosition = event.clientX;
+            let distance = endPosition - startPosition;
+            let threshold = slider.offsetWidth / 3; // Threshold to switch to the next/previous slide
+            if (distance < -threshold) {
+                active = active + 1 <= lengthItems ? active + 1 : 0;
+            } else if (distance > threshold) {
+                active = active - 1 >= 0 ? active - 1 : lengthItems;
+            }
+            reloadSlider();
+            slider.style.transition = '';
+            document.removeEventListener('mousemove', handleDrag);
+        }
+    });
+});
 
 
 

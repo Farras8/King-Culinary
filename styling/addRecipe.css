@@ -97,7 +97,7 @@ body {
   }
 
   .add-wrap{
-    margin-top: 5em;
+    margin-top: 9em;
     margin-bottom: 3em;
     display: flex;
     flex-direction: column;
@@ -278,6 +278,27 @@ footer {
 }
 @media screen and (max-width: 768px) {
   html {
+    font-size:70%;
+  }
+  .add-wrap{
+    margin-top:5em;
+    margin-bottom: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 450px) {
+  html {
     font-size:40%;
+  }
+  .add-wrap{
+    margin-top:5em;
+    margin-bottom: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

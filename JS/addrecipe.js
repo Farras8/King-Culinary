@@ -221,9 +221,6 @@ function addCookingStep(button) {
             // Check if all inputs are valid
             if (isPhotoValid && isrecipe_nameValid && isrecipe_descValid && isingredientValid && iscategoryValid && iscook_stepValid) {
                 showConfirmationAndSuccessAlert();
-                
-                // Reset error messages
-                $('#photo-error, #recipe_name-error, #recipe_desc-error, #category-error, #ingredients-error, #cook_step-error').text('');
             } else {
                 // Show error messages for invalid inputs
                 $('#photo-error').text(isPhotoValid ? '' : '*Photo cannot be empty.');
