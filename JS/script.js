@@ -131,18 +131,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let lengthItems = items.length - 1;
     let active = 0;
-    let isDragging = false;
-    let startPosition = 0;
-    let endPosition = 0;
-
-    // Function to handle mouse move event during dragging
-    function handleDrag(event) {
-        if (isDragging) {
-            let newPosition = event.clientX - startPosition;
-            slider.style.left = -items[active].offsetLeft + newPosition + 'px';
-        }
-    }
-
     next.onclick = function() {
         active = active + 1 <= lengthItems ? active + 1 : 0;
         reloadSlider();
@@ -178,58 +166,8 @@ document.addEventListener('DOMContentLoaded', function() {
     window.onresize = function(event) {
         reloadSlider();
     };
-
-    // Mouse events to handle dragging
-    slider.addEventListener('mousedown', function(event) {
-        isDragging = true;
-        startPosition = event.clientX;
-        slider.style.transition = 'none';
-        document.addEventListener('mousemove', handleDrag);
-    });
-
-    document.addEventListener('mouseup', function(event) {
-        if (isDragging) {
-            isDragging = false;
-            endPosition = event.clientX;
-            let distance = endPosition - startPosition;
-            let threshold = slider.offsetWidth / 3; // Threshold to switch to the next/previous slide
-            if (distance < -threshold) {
-                active = active + 1 <= lengthItems ? active + 1 : 0;
-            } else if (distance > threshold) {
-                active = active - 1 >= 0 ? active - 1 : lengthItems;
-            }
-            reloadSlider();
-            slider.style.transition = '';
-            document.removeEventListener('mousemove', handleDrag);
-        }
-    });
 });
 
-
-
-//Dropdown
-
-
-document.getElementById('up-recipe').addEventListener('click', function (event) {
-    // Tampilkan pesan peringatan menggunakan SweetAlert
-    Swal.fire({
-        icon: 'warning',
-        title: 'You should login first to add your recipe.',
-        showCancelButton: true,
-        confirmButtonText: 'Login',
-        cancelButtonText: 'Cancel'
-    }).then((result) => {
-        // Redirect pengguna ke halaman login jika mereka mengklik tombol "Login"
-        if (result.isConfirmed) {
-            window.location.href = 'login.html';
-        }else{
-            location.reload();
-        }
-    });
-
-    // Menghentikan aksi default dari link
-    event.preventDefault();
-});
 
 document.getElementById('up-recipe-btn').addEventListener('click', function (event) {
     // Tampilkan pesan peringatan menggunakan SweetAlert

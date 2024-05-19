@@ -8,12 +8,10 @@
     <title>King Culinary - About Us</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="styling/Aboutus.css">
 </head>
 
@@ -33,7 +31,7 @@
         <div class="cmenu">
             <a href="browseBy.html" id="search"><i data-feather="search"></i></a>
             <a href="login.html" class="btn-login">Login</a>
-            <a href="" id="menu"><i data-feather="menu"></i></a>
+            <a href="#" id="menu"><i data-feather="menu"></i></a>
         </div>
     </nav>
     <!-- About Us -->
@@ -63,10 +61,8 @@
                         <h4>Farras</h4>
                         <h6>Chief Operating Officer</h6>
                         <div class="iconSosmed">
-                            <a href="https://www.instagram.com/farrasyasyfa/" target="_blank" class="instagram"><i
-                                    data-feather="instagram"></i></a>
-                            <a href="https://www.linkedin.com/in/farras-yasyfa-5768981b2/" target="_blank"
-                                class="linkedin"><i data-feather="linkedin"></i></a>
+                            <a href="https://www.instagram.com/farrasyasyfa/" target="_blank" class="instagram"><i data-feather="instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/farras-yasyfa-5768981b2/" target="_blank" class="linkedin"><i data-feather="linkedin"></i></a>
                         </div>
                     </div>
                 </div>
@@ -87,38 +83,33 @@
     <footer>
         <p>&copy; 2024 King Culinary. All rights reserved.</p>
     </footer>
-    <script>
-        feather.replace()
-    </script>
-    <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        document.getElementById('up-recipe').addEventListener('click', function (event) {
-            // Tampilkan pesan peringatan menggunakan SweetAlert
-            Swal.fire({
-                icon: 'warning',
-                title: 'You should login first to add your recipe.',
-                showCancelButton: true,
-                confirmButtonText: 'Login',
-                cancelButtonText: 'Cancel'
-            }).then((result) => {
-                // Redirect pengguna ke halaman login jika mereka mengklik tombol "Login"
-                if (result.isConfirmed) {
-                    window.location.href = 'login.html';
-                }else{
-            location.reload();
-            }
-            });
-
-            // Menghentikan aksi default dari link
-            event.preventDefault();
-        });
-    </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init();
+        feather.replace();
+
+        $(document).ready(function () {
+            $('#up-recipe').on('click', function (event) {
+                event.preventDefault();
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'You should login first to add your recipe.',
+                    showCancelButton: true,
+                    confirmButtonText: 'Login',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'login.html';
+                    } else {
+                        location.reload();
+                    }
+                });
+            });
+
+            AOS.init();
+        });
     </script>
-    <script src="js/script.js"></script>
 </body>
 
 </html>
