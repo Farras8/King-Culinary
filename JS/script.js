@@ -103,10 +103,6 @@ $(document).ready(function () {
 });
 
 
-
-
-
-
 let menu = document.querySelector('#menu');
 let navbar = document.querySelector('.Navbar');
 
@@ -169,24 +165,5 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-document.getElementById('up-recipe-btn').addEventListener('click', function (event) {
-    // Tampilkan pesan peringatan menggunakan SweetAlert
-    Swal.fire({
-        icon: 'warning',
-        title: 'You should login first to add your recipe.',
-        showCancelButton: true,
-        confirmButtonText: 'Login',
-        cancelButtonText: 'Cancel'
-    }).then((result) => {
-        // Redirect pengguna ke halaman login jika mereka mengklik tombol "Login"
-        if (result.isConfirmed) {
-            window.location.href = 'login.html';
-        }else{
-            location.reload();
-        }
-    });
 
-    // Menghentikan aksi default dari link
-    event.preventDefault();
-});
 

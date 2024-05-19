@@ -8,12 +8,14 @@
     <title>King Culinary - About Us</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="styling/Aboutus.css">
-  </head>
+</head>
 
 <body>
     <!-- Navbar -->
@@ -85,37 +87,38 @@
     <footer>
         <p>&copy; 2024 King Culinary. All rights reserved.</p>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init();
+        feather.replace()
     </script>
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-      feather.replace();
-  
-      document.getElementById('up-recipe').addEventListener('click', function (event) {
-        // Tampilkan pesan peringatan menggunakan SweetAlert
-        Swal.fire({
-          icon: 'warning',
-          title: 'You should login first to add your recipe.',
-          showCancelButton: true,
-          confirmButtonText: 'Login',
-          cancelButtonText: 'Cancel'
-        }).then((result) => {
-          // Redirect pengguna ke halaman login jika mereka mengklik tombol "Login"
-          if (result.isConfirmed) {
-            window.location.href = 'login.html';
-          } else {
+        document.getElementById('up-recipe').addEventListener('click', function (event) {
+            // Tampilkan pesan peringatan menggunakan SweetAlert
+            Swal.fire({
+                icon: 'warning',
+                title: 'You should login first to add your recipe.',
+                showCancelButton: true,
+                confirmButtonText: 'Login',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                // Redirect pengguna ke halaman login jika mereka mengklik tombol "Login"
+                if (result.isConfirmed) {
+                    window.location.href = 'login.html';
+                }else{
             location.reload();
-          }
+            }
+            });
+
+            // Menghentikan aksi default dari link
+            event.preventDefault();
         });
-  
-        // Menghentikan aksi default dari link
-        event.preventDefault();
-      });
     </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="JS/script.js"></script>
 </body>
 
 </html>
