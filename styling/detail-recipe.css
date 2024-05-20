@@ -121,10 +121,15 @@
   gap: 1em;
 }
 .ba-title h1{
+  font-size: 32px;
   font-weight: bold;
   color: rgb(18, 189, 166);
 }
+.ba-description{
+  font-size: 23px;
+  text-align: justify;
 
+}
 .ba-image img{
   height: 400px;
   width: 500px;
@@ -423,6 +428,9 @@ footer {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+    .ba-title{
+      text-align: center;
     }
     .ba-image{
       margin-top: 2em;
